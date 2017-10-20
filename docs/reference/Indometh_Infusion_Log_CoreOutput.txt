@@ -1,0 +1,486 @@
+NCA REPORT
+Subject=1
+
+                        NONCOMPARTMENTAL ANALYSIS REPORT
+                       Package version 0.1.1 (2017-07-10)
+                          R version 3.4.2 (2017-09-28)
+
+Date and Time: 2017-10-20 10:38:08 Asia/Seoul
+
+Calculation Setting
+-------------------
+Drug Administration: Constant Infusion
+Observation count excluding trailing zero: 11
+dose at time 0: 25
+Length of Infusion: 0.25
+AUC Calculation Method: Linear-up Log-down fit
+Weighting for lambda z: Uniform (Ordinary Least Square, OLS)
+Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4
+
+
+Fitting, AUC, AUMC Result
+-------------------------
+      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight
+-------------------------------------------------------------------------------
+     0.0000 +     0.0000                           0.0000     0.0000 
+     0.2500       1.5000                           0.1875     0.0469 
+     0.5000       0.9400                           0.4871     0.1563 
+     0.7500       0.7800                           0.7014     0.2895 
+     1.0000       0.4800                           0.8559     0.4231 
+     1.2500       0.3700                           0.9616     0.5414 
+     2.0000       0.1900                           1.1641     0.8621 
+     3.0000       0.1200                           1.3165     1.2371 
+     4.0000       0.1100                           1.4314     1.6386 
+     5.0000 *     0.0800     0.0808 -7.972e-04     1.5256     2.0600     1.0000
+     6.0000 *     0.0700     0.0690 +1.033e-03     1.6005     2.4710     1.0000
+     8.0000 *     0.0500     0.0502 -2.485e-04     1.7194     3.2966     1.0000
+
++: Back extrapolated concentration
+*: Used for the calculation of Lambda z.
+
+
+Calculated Values
+-----------------
+CMAX       Max Conc                                        1.5000 mg/L
+CMAXD      Max Conc Norm by Dose                           0.0600 mg/L/mg
+TMAX       Time of CMAX                                    0.2500 h
+CLST       Last Nonzero Conc                               0.0500 mg/L
+TLST       Time of Last Nonzero Conc                       8.0000 h
+CLSTP      Last Nonzero Conc Pred                          0.0502 mg/L
+LAMZHL     Half-Life Lambda z                              4.3781 h
+LAMZ       Lambda z                                        0.1583 /h
+LAMZLL     Lambda z Lower Limit                            5.0000 h
+LAMZUL     Lambda z Upper Limit                            8.0000 h
+LAMZNPT    Number of Points for Lambda z                   3
+CORRXY     Correlation Between TimeX and Log ConcY        -0.9985 
+R2         R Squared                                       0.9971 
+R2ADJ      R Squared Adjusted                              0.9941 
+AUCLST     AUC to Last Nonzero Conc                        1.7194 h*mg/L
+AUCALL     AUC All                                         1.7194 h*mg/L
+AUCIFO     AUC Infinity Obs                                2.0352 h*mg/L
+AUCIFOD    AUC Infinity Obs Norm by Dose                   0.0814 h*mg/L/mg
+AUCPEO     AUC %Extrapolation Obs                         15.5178 %
+AUCIFP     AUC Infinity Pred                               2.0368 h*mg/L
+AUCIFPD    AUC Infinity Pred Norm by Dose                  0.0815 h*mg/L/mg
+AUCPEP     AUC %Extrapolation Pred                        15.5829 %
+AUMCLST    AUMC to Last Nonzero Conc                       3.2966 h2*mg/L
+AUMCIFO    AUMC Infinity Obs                               7.8179 h2*mg/L
+AUMCPEO    AUMC %Extrapolation Obs                        57.8330 %
+AUMCIFP    AUMC Infinity Pred                              7.8403 h2*mg/L
+AUMCPEP    AUMC % Extrapolation Pred                      57.9539 %
+MRTIVLST   MRT Intravasc to Last Nonzero Conc              1.7923 h
+MRTIVIFO   MRT Intravasc Infinity Obs                      3.7164 h
+MRTIVIFP   MRT Intravasc Infinity Pred                     3.7244 h
+VZO        Vz Obs                                         77.5890 L
+VZP        Vz Pred                                        77.5292 L
+CLO        Total CL Obs                                   12.2839 L/h
+CLP        Total CL Pred                                  12.2745 L/h
+VSSO       Vol Dist Steady State Obs                      45.6515 L
+VSSP       Vol Dist Steady State Pred                     45.7154 L
+
+
+NCA REPORT
+Subject=2
+
+                        NONCOMPARTMENTAL ANALYSIS REPORT
+                       Package version 0.1.1 (2017-07-10)
+                          R version 3.4.2 (2017-09-28)
+
+Date and Time: 2017-10-20 10:38:08 Asia/Seoul
+
+Calculation Setting
+-------------------
+Drug Administration: Constant Infusion
+Observation count excluding trailing zero: 11
+dose at time 0: 25
+Length of Infusion: 0.25
+AUC Calculation Method: Linear-up Log-down fit
+Weighting for lambda z: Uniform (Ordinary Least Square, OLS)
+Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4
+
+
+Fitting, AUC, AUMC Result
+-------------------------
+      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight
+-------------------------------------------------------------------------------
+     0.0000 +     0.0000                           0.0000     0.0000 
+     0.2500       2.0300                           0.2537     0.0634 
+     0.5000       1.6300                           0.7094     0.2322 
+     0.7500 *     0.7100     0.6690 +4.102e-02     0.9862     0.4005     1.0000
+     1.0000 *     0.7000     0.6203 +7.971e-02     1.1624     0.5546     1.0000
+     1.2500 *     0.6400     0.5751 +6.486e-02     1.3298     0.7426     1.0000
+     2.0000 *     0.3600     0.4585 -9.848e-02     1.6948     1.3227     1.0000
+     3.0000 *     0.3200     0.3389 -1.887e-02     2.0344     2.1684     1.0000
+     4.0000 *     0.2000     0.2505 -5.047e-02     2.2897     3.0520     1.0000
+     5.0000 *     0.2500     0.1851 +6.487e-02     2.5147     4.0770     1.0000
+     6.0000 *     0.1200     0.1368 -1.684e-02     2.6918     5.0404     1.0000
+     8.0000 *     0.0800     0.0748 +5.244e-03     2.8891     6.4083     1.0000
+
++: Back extrapolated concentration
+*: Used for the calculation of Lambda z.
+
+
+Calculated Values
+-----------------
+CMAX       Max Conc                                        2.0300 mg/L
+CMAXD      Max Conc Norm by Dose                           0.0812 mg/L/mg
+TMAX       Time of CMAX                                    0.2500 h
+CLST       Last Nonzero Conc                               0.0800 mg/L
+TLST       Time of Last Nonzero Conc                       8.0000 h
+CLSTP      Last Nonzero Conc Pred                          0.0748 mg/L
+LAMZHL     Half-Life Lambda z                              2.2931 h
+LAMZ       Lambda z                                        0.3023 /h
+LAMZLL     Lambda z Lower Limit                            0.7500 h
+LAMZUL     Lambda z Upper Limit                            8.0000 h
+LAMZNPT    Number of Points for Lambda z                   9
+CORRXY     Correlation Between TimeX and Log ConcY        -0.9735 
+R2         R Squared                                       0.9477 
+R2ADJ      R Squared Adjusted                              0.9402 
+AUCLST     AUC to Last Nonzero Conc                        2.8891 h*mg/L
+AUCALL     AUC All                                         2.8891 h*mg/L
+AUCIFO     AUC Infinity Obs                                3.1538 h*mg/L
+AUCIFOD    AUC Infinity Obs Norm by Dose                   0.1262 h*mg/L/mg
+AUCPEO     AUC %Extrapolation Obs                          8.3916 %
+AUCIFP     AUC Infinity Pred                               3.1365 h*mg/L
+AUCIFPD    AUC Infinity Pred Norm by Dose                  0.1255 h*mg/L/mg
+AUCPEP     AUC %Extrapolation Pred                         7.8849 %
+AUMCLST    AUMC to Last Nonzero Conc                       6.4083 h2*mg/L
+AUMCIFO    AUMC Infinity Obs                               9.4010 h2*mg/L
+AUMCPEO    AUMC %Extrapolation Obs                        31.8345 %
+AUMCIFP    AUMC Infinity Pred                              9.2049 h2*mg/L
+AUMCPEP    AUMC % Extrapolation Pred                      30.3817 %
+MRTIVLST   MRT Intravasc to Last Nonzero Conc              2.0930 h
+MRTIVIFO   MRT Intravasc Infinity Obs                      2.8559 h
+MRTIVIFP   MRT Intravasc Infinity Pred                     2.8098 h
+VZO        Vz Obs                                         26.2239 L
+VZP        Vz Pred                                        26.3689 L
+CLO        Total CL Obs                                    7.9269 L/h
+CLP        Total CL Pred                                   7.9708 L/h
+VSSO       Vol Dist Steady State Obs                      22.6383 L
+VSSP       Vol Dist Steady State Pred                     22.3963 L
+
+
+NCA REPORT
+Subject=3
+
+                        NONCOMPARTMENTAL ANALYSIS REPORT
+                       Package version 0.1.1 (2017-07-10)
+                          R version 3.4.2 (2017-09-28)
+
+Date and Time: 2017-10-20 10:38:08 Asia/Seoul
+
+Calculation Setting
+-------------------
+Drug Administration: Constant Infusion
+Observation count excluding trailing zero: 11
+dose at time 0: 25
+Length of Infusion: 0.25
+AUC Calculation Method: Linear-up Log-down fit
+Weighting for lambda z: Uniform (Ordinary Least Square, OLS)
+Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4
+
+
+Fitting, AUC, AUMC Result
+-------------------------
+      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight
+-------------------------------------------------------------------------------
+     0.0000 +     0.0000                           0.0000     0.0000 
+     0.2500       2.7200                           0.3400     0.0850 
+     0.5000 *     1.4900     0.9461 +5.439e-01     0.8509     0.2702     1.0000
+     0.7500 *     1.1600     0.8514 +3.086e-01     1.1805     0.4745     1.0000
+     1.0000 *     0.8000     0.7662 +3.380e-02     1.4227     0.6845     1.0000
+     1.2500 *     0.8000     0.6895 +1.105e-01     1.6227     0.9095     1.0000
+     2.0000 *     0.3900     0.5025 -1.125e-01     2.0507     1.5860     1.0000
+     3.0000 *     0.2200     0.3295 -1.095e-01     2.3476     2.3142     1.0000
+     4.0000 *     0.1200     0.2161 -9.610e-02     2.5126     2.8834     1.0000
+     5.0000 *     0.1100     0.1417 -3.172e-02     2.6275     3.3997     1.0000
+     6.0000 *     0.0800     0.0929 -1.294e-02     2.7217     3.9153     1.0000
+     8.0000 *     0.0800     0.0400 +4.003e-02     2.8817     5.0353     1.0000
+
++: Back extrapolated concentration
+*: Used for the calculation of Lambda z.
+
+
+Calculated Values
+-----------------
+CMAX       Max Conc                                        2.7200 mg/L
+CMAXD      Max Conc Norm by Dose                           0.1088 mg/L/mg
+TMAX       Time of CMAX                                    0.2500 h
+CLST       Last Nonzero Conc                               0.0800 mg/L
+TLST       Time of Last Nonzero Conc                       8.0000 h
+CLSTP      Last Nonzero Conc Pred                          0.0400 mg/L
+LAMZHL     Half-Life Lambda z                              1.6429 h
+LAMZ       Lambda z                                        0.4219 /h
+LAMZLL     Lambda z Lower Limit                            0.5000 h
+LAMZUL     Lambda z Upper Limit                            8.0000 h
+LAMZNPT    Number of Points for Lambda z                  10
+CORRXY     Correlation Between TimeX and Log ConcY        -0.9359 
+R2         R Squared                                       0.8758 
+R2ADJ      R Squared Adjusted                              0.8603 
+AUCLST     AUC to Last Nonzero Conc                        2.8817 h*mg/L
+AUCALL     AUC All                                         2.8817 h*mg/L
+AUCIFO     AUC Infinity Obs                                3.0713 h*mg/L
+AUCIFOD    AUC Infinity Obs Norm by Dose                   0.1229 h*mg/L/mg
+AUCPEO     AUC %Extrapolation Obs                          6.1739 %
+AUCIFP     AUC Infinity Pred                               2.9765 h*mg/L
+AUCIFPD    AUC Infinity Pred Norm by Dose                  0.1191 h*mg/L/mg
+AUCPEP     AUC %Extrapolation Pred                         3.1832 %
+AUMCLST    AUMC to Last Nonzero Conc                       5.0353 h2*mg/L
+AUMCIFO    AUMC Infinity Obs                               7.0018 h2*mg/L
+AUMCPEO    AUMC %Extrapolation Obs                        28.0847 %
+AUMCIFP    AUMC Infinity Pred                              6.0179 h2*mg/L
+AUMCPEP    AUMC % Extrapolation Pred                      16.3270 %
+MRTIVLST   MRT Intravasc to Last Nonzero Conc              1.6223 h
+MRTIVIFO   MRT Intravasc Infinity Obs                      2.1547 h
+MRTIVIFP   MRT Intravasc Infinity Pred                     1.8968 h
+VZO        Vz Obs                                         19.2935 L
+VZP        Vz Pred                                        19.9085 L
+CLO        Total CL Obs                                    8.1398 L/h
+CLP        Total CL Pred                                   8.3992 L/h
+VSSO       Vol Dist Steady State Obs                      17.5389 L
+VSSP       Vol Dist Steady State Pred                     15.9319 L
+
+
+NCA REPORT
+Subject=4
+
+                        NONCOMPARTMENTAL ANALYSIS REPORT
+                       Package version 0.1.1 (2017-07-10)
+                          R version 3.4.2 (2017-09-28)
+
+Date and Time: 2017-10-20 10:38:08 Asia/Seoul
+
+Calculation Setting
+-------------------
+Drug Administration: Constant Infusion
+Observation count excluding trailing zero: 11
+dose at time 0: 25
+Length of Infusion: 0.25
+AUC Calculation Method: Linear-up Log-down fit
+Weighting for lambda z: Uniform (Ordinary Least Square, OLS)
+Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4
+
+
+Fitting, AUC, AUMC Result
+-------------------------
+      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight
+-------------------------------------------------------------------------------
+     0.0000 +     0.0000                           0.0000     0.0000 
+     0.2500       1.8500                           0.2313     0.0578 
+     0.5000 *     1.3900     0.8606 +5.294e-01     0.6335     0.2063     1.0000
+     0.7500 *     1.0200     0.7730 +2.470e-01     0.9324     0.3911     1.0000
+     1.0000 *     0.8900     0.6944 +1.956e-01     1.1708     0.5990     1.0000
+     1.2500 *     0.5900     0.6238 -3.376e-02     1.3532     0.8027     1.0000
+     2.0000 *     0.4000     0.4521 -5.213e-02     1.7198     1.3896     1.0000
+     3.0000 *     0.1600     0.2944 -1.344e-01     1.9818     2.0247     1.0000
+     4.0000 *     0.1100     0.1917 -8.168e-02     2.1152     2.4876     1.0000
+     5.0000 *     0.1000     0.1248 -2.480e-02     2.2201     2.9589     1.0000
+     6.0000 *     0.0700     0.0813 -1.126e-02     2.3042     3.4190     1.0000
+     8.0000 *     0.0700     0.0344 +3.555e-02     2.4442     4.3990     1.0000
+
++: Back extrapolated concentration
+*: Used for the calculation of Lambda z.
+
+
+Calculated Values
+-----------------
+CMAX       Max Conc                                        1.8500 mg/L
+CMAXD      Max Conc Norm by Dose                           0.0740 mg/L/mg
+TMAX       Time of CMAX                                    0.2500 h
+CLST       Last Nonzero Conc                               0.0700 mg/L
+TLST       Time of Last Nonzero Conc                       8.0000 h
+CLSTP      Last Nonzero Conc Pred                          0.0344 mg/L
+LAMZHL     Half-Life Lambda z                              1.6154 h
+LAMZ       Lambda z                                        0.4291 /h
+LAMZLL     Lambda z Lower Limit                            0.5000 h
+LAMZUL     Lambda z Upper Limit                            8.0000 h
+LAMZNPT    Number of Points for Lambda z                  10
+CORRXY     Correlation Between TimeX and Log ConcY        -0.9312 
+R2         R Squared                                       0.8671 
+R2ADJ      R Squared Adjusted                              0.8505 
+AUCLST     AUC to Last Nonzero Conc                        2.4442 h*mg/L
+AUCALL     AUC All                                         2.4442 h*mg/L
+AUCIFO     AUC Infinity Obs                                2.6074 h*mg/L
+AUCIFOD    AUC Infinity Obs Norm by Dose                   0.1043 h*mg/L/mg
+AUCPEO     AUC %Extrapolation Obs                          6.2569 %
+AUCIFP     AUC Infinity Pred                               2.5245 h*mg/L
+AUCIFPD    AUC Infinity Pred Norm by Dose                  0.1010 h*mg/L/mg
+AUCPEP     AUC %Extrapolation Pred                         3.1803 %
+AUMCLST    AUMC to Last Nonzero Conc                       4.3990 h2*mg/L
+AUMCIFO    AUMC Infinity Obs                               6.0844 h2*mg/L
+AUMCPEO    AUMC %Extrapolation Obs                        27.6995 %
+AUMCIFP    AUMC Infinity Pred                              5.2285 h2*mg/L
+AUMCPEP    AUMC % Extrapolation Pred                      15.8637 %
+MRTIVLST   MRT Intravasc to Last Nonzero Conc              1.6748 h
+MRTIVIFO   MRT Intravasc Infinity Obs                      2.2085 h
+MRTIVIFP   MRT Intravasc Infinity Pred                     1.9461 h
+VZO        Vz Obs                                         22.3460 L
+VZP        Vz Pred                                        23.0794 L
+CLO        Total CL Obs                                    9.5881 L/h
+CLP        Total CL Pred                                   9.9028 L/h
+VSSO       Vol Dist Steady State Obs                      21.1756 L
+VSSP       Vol Dist Steady State Pred                     19.2715 L
+
+
+NCA REPORT
+Subject=5
+
+                        NONCOMPARTMENTAL ANALYSIS REPORT
+                       Package version 0.1.1 (2017-07-10)
+                          R version 3.4.2 (2017-09-28)
+
+Date and Time: 2017-10-20 10:38:08 Asia/Seoul
+
+Calculation Setting
+-------------------
+Drug Administration: Constant Infusion
+Observation count excluding trailing zero: 11
+dose at time 0: 25
+Length of Infusion: 0.25
+AUC Calculation Method: Linear-up Log-down fit
+Weighting for lambda z: Uniform (Ordinary Least Square, OLS)
+Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4
+
+
+Fitting, AUC, AUMC Result
+-------------------------
+      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight
+-------------------------------------------------------------------------------
+     0.0000 +     0.0000                           0.0000     0.0000 
+     0.2500       2.0500                           0.2563     0.0641 
+     0.5000       1.0400                           0.6283     0.1984 
+     0.7500       0.8100                           0.8584     0.3410 
+     1.0000 *     0.3900     0.2908 +9.920e-02     1.0020     0.4645     1.0000
+     1.2500 *     0.3000     0.2730 +2.700e-02     1.0878     0.5605     1.0000
+     2.0000 *     0.2300     0.2259 +4.143e-03     1.2854     0.8783     1.0000
+     3.0000 *     0.1300     0.1754 -4.542e-02     1.4607     1.3082     1.0000
+     4.0000 *     0.1100     0.1362 -2.624e-02     1.5804     1.7256     1.0000
+     5.0000 *     0.0800     0.1058 -2.581e-02     1.6746     2.1470     1.0000
+     6.0000 *     0.1000     0.0822 +1.782e-02     1.7646     2.6470     1.0000
+     8.0000 *     0.0600     0.0496 +1.043e-02     1.9212     3.7300     1.0000
+
++: Back extrapolated concentration
+*: Used for the calculation of Lambda z.
+
+
+Calculated Values
+-----------------
+CMAX       Max Conc                                        2.0500 mg/L
+CMAXD      Max Conc Norm by Dose                           0.0820 mg/L/mg
+TMAX       Time of CMAX                                    0.2500 h
+CLST       Last Nonzero Conc                               0.0600 mg/L
+TLST       Time of Last Nonzero Conc                       8.0000 h
+CLSTP      Last Nonzero Conc Pred                          0.0496 mg/L
+LAMZHL     Half-Life Lambda z                              2.7424 h
+LAMZ       Lambda z                                        0.2527 /h
+LAMZLL     Lambda z Lower Limit                            1.0000 h
+LAMZUL     Lambda z Upper Limit                            8.0000 h
+LAMZNPT    Number of Points for Lambda z                   8
+CORRXY     Correlation Between TimeX and Log ConcY        -0.9355 
+R2         R Squared                                       0.8752 
+R2ADJ      R Squared Adjusted                              0.8545 
+AUCLST     AUC to Last Nonzero Conc                        1.9212 h*mg/L
+AUCALL     AUC All                                         1.9212 h*mg/L
+AUCIFO     AUC Infinity Obs                                2.1586 h*mg/L
+AUCIFOD    AUC Infinity Obs Norm by Dose                   0.0863 h*mg/L/mg
+AUCPEO     AUC %Extrapolation Obs                         10.9975 %
+AUCIFP     AUC Infinity Pred                               2.1173 h*mg/L
+AUCIFPD    AUC Infinity Pred Norm by Dose                  0.0847 h*mg/L/mg
+AUCPEP     AUC %Extrapolation Pred                         9.2631 %
+AUMCLST    AUMC to Last Nonzero Conc                       3.7300 h2*mg/L
+AUMCIFO    AUMC Infinity Obs                               6.5683 h2*mg/L
+AUMCPEO    AUMC %Extrapolation Obs                        43.2128 %
+AUMCIFP    AUMC Infinity Pred                              6.0750 h2*mg/L
+AUMCPEP    AUMC % Extrapolation Pred                      38.6013 %
+MRTIVLST   MRT Intravasc to Last Nonzero Conc              1.8165 h
+MRTIVIFO   MRT Intravasc Infinity Obs                      2.9179 h
+MRTIVIFP   MRT Intravasc Infinity Pred                     2.7442 h
+VZO        Vz Obs                                         45.8229 L
+VZP        Vz Pred                                        46.7159 L
+CLO        Total CL Obs                                   11.5816 L/h
+CLP        Total CL Pred                                  11.8073 L/h
+VSSO       Vol Dist Steady State Obs                      33.7939 L
+VSSP       Vol Dist Steady State Pred                     32.4015 L
+
+
+NCA REPORT
+Subject=6
+
+                        NONCOMPARTMENTAL ANALYSIS REPORT
+                       Package version 0.1.1 (2017-07-10)
+                          R version 3.4.2 (2017-09-28)
+
+Date and Time: 2017-10-20 10:38:08 Asia/Seoul
+
+Calculation Setting
+-------------------
+Drug Administration: Constant Infusion
+Observation count excluding trailing zero: 11
+dose at time 0: 25
+Length of Infusion: 0.25
+AUC Calculation Method: Linear-up Log-down fit
+Weighting for lambda z: Uniform (Ordinary Least Square, OLS)
+Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4
+
+
+Fitting, AUC, AUMC Result
+-------------------------
+      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight
+-------------------------------------------------------------------------------
+     0.0000 +     0.0000                           0.0000     0.0000 
+     0.2500       2.3100                           0.2888     0.0722 
+     0.5000       1.4400                           0.7490     0.2403 
+     0.7500 *     1.0300     0.7297 +3.003e-01     1.0549     0.4293     1.0000
+     1.0000 *     0.8400     0.6680 +1.720e-01     1.2878     0.6321     1.0000
+     1.2500 *     0.6400     0.6115 +2.849e-02     1.4717     0.8380     1.0000
+     2.0000 *     0.4200     0.4691 -4.909e-02     1.8634     1.4642     1.0000
+     3.0000 *     0.2400     0.3294 -8.940e-02     2.1850     2.2534     1.0000
+     4.0000 *     0.1700     0.2313 -6.131e-02     2.3880     2.9581     1.0000
+     5.0000 *     0.1300     0.1624 -3.243e-02     2.5371     3.6257     1.0000
+     6.0000 *     0.1000     0.1141 -1.406e-02     2.6515     4.2521     1.0000
+     8.0000 *     0.0900     0.0562 +3.376e-02     2.8413     5.5776     1.0000
+
++: Back extrapolated concentration
+*: Used for the calculation of Lambda z.
+
+
+Calculated Values
+-----------------
+CMAX       Max Conc                                        2.3100 mg/L
+CMAXD      Max Conc Norm by Dose                           0.0924 mg/L/mg
+TMAX       Time of CMAX                                    0.2500 h
+CLST       Last Nonzero Conc                               0.0900 mg/L
+TLST       Time of Last Nonzero Conc                       8.0000 h
+CLSTP      Last Nonzero Conc Pred                          0.0562 mg/L
+LAMZHL     Half-Life Lambda z                              1.9607 h
+LAMZ       Lambda z                                        0.3535 /h
+LAMZLL     Lambda z Lower Limit                            0.7500 h
+LAMZUL     Lambda z Upper Limit                            8.0000 h
+LAMZNPT    Number of Points for Lambda z                   9
+CORRXY     Correlation Between TimeX and Log ConcY        -0.9508 
+R2         R Squared                                       0.9040 
+R2ADJ      R Squared Adjusted                              0.8902 
+AUCLST     AUC to Last Nonzero Conc                        2.8413 h*mg/L
+AUCALL     AUC All                                         2.8413 h*mg/L
+AUCIFO     AUC Infinity Obs                                3.0959 h*mg/L
+AUCIFOD    AUC Infinity Obs Norm by Dose                   0.1238 h*mg/L/mg
+AUCPEO     AUC %Extrapolation Obs                          8.2232 %
+AUCIFP     AUC Infinity Pred                               3.0004 h*mg/L
+AUCIFPD    AUC Infinity Pred Norm by Dose                  0.1200 h*mg/L/mg
+AUCPEP     AUC %Extrapolation Pred                         5.3024 %
+AUMCLST    AUMC to Last Nonzero Conc                       5.5776 h2*mg/L
+AUMCIFO    AUMC Infinity Obs                               8.3344 h2*mg/L
+AUMCPEO    AUMC %Extrapolation Obs                        33.0774 %
+AUMCIFP    AUMC Infinity Pred                              7.3003 h2*mg/L
+AUMCPEP    AUMC % Extrapolation Pred                      23.5984 %
+MRTIVLST   MRT Intravasc to Last Nonzero Conc              1.8380 h
+MRTIVIFO   MRT Intravasc Infinity Obs                      2.5671 h
+MRTIVIFP   MRT Intravasc Infinity Pred                     2.3081 h
+VZO        Vz Obs                                         22.8423 L
+VZP        Vz Pred                                        23.5692 L
+CLO        Total CL Obs                                    8.0752 L/h
+CLP        Total CL Pred                                   8.3322 L/h
+VSSO       Vol Dist Steady State Obs                      20.7296 L
+VSSP       Vol Dist Steady State Pred                     19.2317 L
+
+
