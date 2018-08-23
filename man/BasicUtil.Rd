@@ -7,7 +7,7 @@
 \alias{AddPage}
 \alias{Text1}
 \alias{TextM}
-\alias{Unit}
+\alias{Plot4rtf}
 \title{Internal Functions}
 \description{Internal functions}
 \details{These are not to be called by the user.}

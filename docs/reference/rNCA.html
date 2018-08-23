@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Do NCA for review <U+2014> rNCA <U+653C><U+3E32>€γε<U+3E32> pkr</title>
+<title>Do NCA for review β€” rNCA β€Ά pkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Do NCA for review β€” rNCA" />
+
+<meta property="og:description" content="This performs NCA from the CDISC EX and PC datasets." />
+<meta name="twitter:card" content="summary" />
+
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +59,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">pkr</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">pkr</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -65,6 +81,7 @@
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -72,20 +89,25 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Do NCA for review</h1>
+    
+    <div class="hidden name"><code>rNCA.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>This performs NCA from the CDISC EX and PC datasets.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>rNCA</span>(<span class='no'>ex</span>, <span class='no'>pc</span>, <span class='kw'>study</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>trt</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>analyte</span> <span class='kw'>=</span> <span class='st'>""</span>,
-     <span class='kw'>codeBQL</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"&lt; 0"</span>, <span class='st'>"NQ"</span>, <span class='st'>"BQL"</span>, <span class='st'>"BQoL"</span>, <span class='st'>"&lt;LOQ"</span>), <span class='kw'>fit</span><span class='kw'>=</span><span class='st'>"Linear"</span>, <span class='kw'>MinPoints</span> <span class='kw'>=</span> <span class='fl'>5</span>)</pre>
+     <span class='kw'>codeBQL</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"&lt; 0"</span>, <span class='st'>"&lt;0"</span>, <span class='st'>"NQ"</span>, <span class='st'>"BLQ"</span>, <span class='st'>"BQL"</span>, <span class='st'>"BQoL"</span>, <span class='st'>"&lt;LOQ"</span>),
+     <span class='kw'>fit</span><span class='kw'>=</span><span class='st'>"Linear"</span>, <span class='kw'>MinPoints</span> <span class='kw'>=</span> <span class='fl'>5</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -137,7 +159,7 @@ Results of this can be further processed by foreNCA to plot and compare between 
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code>help</code>, <code><a href='NCA0.html'>NCA0</a></code>, <code><a href='loadEXPC.html'>loadEXPC</a></code>, <code><a href='foreNCA.html'>foreNCA</a></code></p>
+    <div class='dont-index'><p><code>help</code>, <code><a href='NCA0.html'>NCA0</a></code>, <code><a href='loadEXPC.html'>loadEXPC</a></code>, <code><a href='foreNCA.html'>foreNCA</a></code></p></div>
     
 
   </div>
@@ -164,11 +186,14 @@ Results of this can be further processed by foreNCA to plot and compare between 
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

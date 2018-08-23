@@ -2,12 +2,6 @@ readPC = function(folders)
 {
   PC = combXPT(folders, "PC")
 
-# If DTC does not sec, attch :29 at the end
-  for (i in 1:nrow(PC)) {
-    if (nchar(PC[i, "PCDTC"]) == 16) PC[i, "PCDTC"] = paste0(PC[i, "PCDTC"], ":29")
-    else PC[i, "PCDTC"] = ""
-  }
-
 # Numeric type column will be set
   colNum = intersect(c("PCSTRESN", "VISITNUM", "PCTPTNUM"), colnames(PC))
   nCol = length(colNum)
@@ -17,6 +11,10 @@ readPC = function(folders)
 
   if (!("PCSPEC" %in% colnames(PC))) PC[,"PCSPEC"] == "PLASMA"
   if (!("PCLLOQ" %in% colnames(PC))) PC[,"PCLLOQ"] == "0"
+
+  PC = PC[UT(PC[,"PCSPEC"]) == "PLASMA",] # currently PLASMA only
+  PC = PC[UT(PC[,"PCSTAT"]) != "NOT DONE",] # remove not done
+  PC[PC[,"PCORRES"]=="BLQ","PCSTRESN"] = 0 # treat BLQ as 0
 
   return(PC)
 }

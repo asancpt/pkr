@@ -85,7 +85,7 @@ conduct noncompartmental analysis for many subjects in a data table
 }
 }
 \author{Kyun-Seop Bae <k@acr.kr>}
-\seealso{\code{\link{IndiNCA}}}
+\seealso{\code{\link{sNCA}}}
 \examples{
 # Theoph and Indometh data: dose in mg, conc in mg/L, time in h
 NCA(Theoph, "Subject", "Time", "conc", dose=320, uConc="mg/L")

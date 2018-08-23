@@ -24,7 +24,7 @@ NCA0 = function(EX0, PC0, fit="Linear")
   TAD = as.numeric(difftime(strptime(PC0[,"PCDTC"],"%Y-%m-%dT%H:%M:%S"), strptime(cStart, "%Y-%m-%dT%H:%M:%S"), units="hours"))
   TAD[TAD < 0] = 0
   y = as.numeric(PC0[,"PCSTRESN"])
-  Res0 = IndiNCA(TAD, y, dose=cDose, adm=admMethod, dur=cDur, uConc=cUnitConc, uDose=cUnitDose, fit=fit)
+  Res0 = sNCA(TAD, y, dose=cDose, adm=admMethod, dur=cDur, doseUnit=cUnitDose, concUnit=cUnitConc, down=fit, returnNA=FALSE)
   tNames = names(Res0)
   Res = c(admMethod, cDose, cUnitDose, cDur, "h", cUnitConc, Res0)
   names(Res) = c("AdmMethod", "Dose", "UnitDose", "Dur", "UnitTime", "UnitConc", tNames)

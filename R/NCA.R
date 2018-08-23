@@ -52,7 +52,7 @@ NCA = function(concData, id, Time, conc, trt="", fit="Linear", dose=0, adm="Extr
         if (adm == "Infusion" & !(cTimeInfusion > 0)) stop("Infusion mode should have dur larger than 0!")
 
         Res0 = rbind(Res0, data.frame(cSUBJID, stringsAsFactors=FALSE))
-        cResult = IndiNCA(x, y, fit=fit, dose=cDose, adm=adm, dur=cTimeInfusion, report=report, iAUC=iAUC, uTime=uTime, uConc=uConc, uDose=uDose)
+        cResult = sNCA(x, y, dose=cDose, adm=adm, dur=cTimeInfusion, iAUC=iAUC, doseUnit=uDose, timeUnit=uTime, concUnit=uConc, down=fit, returnNA=FALSE)[-1]
         if (report == "Table") {
           Result = rbind(Result, cResult)
         } else {
@@ -82,7 +82,7 @@ NCA = function(concData, id, Time, conc, trt="", fit="Linear", dose=0, adm="Extr
           x = as.numeric(Dat[,Time])
           y = as.numeric(Dat[,conc])
           Res0 = rbind(Res0, data.frame(cSUBJID, cTRT, stringsAsFactors=FALSE))
-          cResult = IndiNCA(x, y, fit=fit, dose=dose, adm=adm, dur=dur, report=report, iAUC=iAUC, uTime=uTime, uConc=uConc, uDose=uDose)
+          cResult = sNCA(x, y, dose=cDose, adm=adm, dur=cTimeInfusion, iAUC=iAUC, doseUnit=uDose, timeUnit=uTime, concUnit=uConc, down=fit, returnNA=FALSE)[-1]
           if (report == "Table") {
             Result = rbind(Result, cResult)
           } else {

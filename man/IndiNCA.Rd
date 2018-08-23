@@ -1,7 +1,7 @@
 \name{IndiNCA}
 \alias{IndiNCA}
 \title{Noncompartmental Analysis for an Individual}
-\description{It performs a noncompartmental analysis with one subject data}
+\description{It performs a noncompartmental analysis with one subject data. This will be deprecated. Use \code{sNCA()} instead.}
 \usage{IndiNCA(x, y, dose = 0, fit = "Linear", adm = "Extravascular", dur = 0,
                report = "Table", iAUC = "", uTime = "h", uConc = "ug/L", uDose = "mg")}
 \arguments{

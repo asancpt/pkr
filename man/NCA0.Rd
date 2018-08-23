@@ -20,6 +20,6 @@ This returns NCA results vector.
 \author{Kyun-Seop Bae <k@acr.kr>}
 
 \seealso{
-\code{\link{help}}, \code{\link{rNCA}}, \code{\link{IndiNCA}}
+\code{\link{help}}, \code{\link{rNCA}}, \code{\link{sNCA}}
 }
 \keyword{ NCA }

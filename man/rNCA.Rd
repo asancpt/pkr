@@ -4,7 +4,8 @@
 \description{This performs NCA from the CDISC EX and PC datasets.}
 \usage{
 rNCA(ex, pc, study = "", trt = "", id = "", analyte = "", 
-     codeBQL = c("< 0", "NQ", "BQL", "BQoL", "<LOQ"), fit="Linear", MinPoints = 5)
+     codeBQL = c("< 0", "<0", "NQ", "BLQ", "BQL", "BQoL", "<LOQ"), 
+     fit="Linear", MinPoints = 5)
 }
 \arguments{
   \item{ex}{EX domain data, usually from the \code{loadEXPC}}

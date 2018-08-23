@@ -4,7 +4,7 @@ combXPT = function(folders, domain)
   if (length(nFolder) == 0) stop("You did not specify any folder!")
   if (length(domain) != 1) stop("One domain name needs.")
   folders = Trim(folders)
-  domain = toupper(Trim(domain))
+  domain = UT(domain)
 
   for (i in 1:nFolder) {
     cFolder = folders[i]
@@ -24,6 +24,7 @@ combXPT = function(folders, domain)
         colNames = colnames(cXPT)
         XPT = cXPT
       } else {
+        if (!setequal(colNames, colnames(cXPT))) warning(paste0(folders[i],domain," does not have the same column!"))
         colNames = intersect(colNames, colnames(cXPT))
         XPT = rbind(XPT[colNames], cXPT[colNames])
       }

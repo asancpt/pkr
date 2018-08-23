@@ -1,4 +1,4 @@
-rNCA = function(ex, pc, study="", trt="", id="", analyte="", codeBQL=c("< 0", "NQ", "BQL", "BQoL", "<LOQ"), fit="Linear", MinPoints=5)
+rNCA = function(ex, pc, study="", trt="", id="", analyte="", codeBQL=c("< 0", "<0", "NQ", "BLQ", "BQL", "BQoL", "<LOQ"), fit="Linear", MinPoints=5)
 {
   for (i in 1:ncol(ex)) {
     ex[,i] = Trim(as.character(ex[,i]))
@@ -14,9 +14,16 @@ rNCA = function(ex, pc, study="", trt="", id="", analyte="", codeBQL=c("< 0", "N
   ex[toupper(ex[,"EXTRT"])=="PLACEBO","EXDOSE"] = "0"
   ex = ex[!is.na(ex[,"EXSTDTC"]) & Trim(ex[,"EXSTDTC"]) != "",]
 
-  pc[toupper(pc[,"PCSTRESC"]) %in% toupper(codeBQL), "PCSTRESN"] = "0"
+  pc[toupper(Trim(pc[,"PCSTRESC"])) %in% toupper(Trim(codeBQL)), "PCSTRESN"] = "0"
   pc = pc[!is.na(pc[,"PCSTRESN"]) & pc[,"PCSTRESN"] != "",]
-  pc[as.numeric(pc[,"PCSTRESN"]) < as.numeric(pc[,"PCLLOQ"]),"PCSTRESN"] = "0"
+  
+  for (i in 1:nrow(pc)) {
+    if (!is.na(as.numeric(pc[i,"PCLLOQ"])) & !is.na(as.numeric(pc[i,"PCSTRESN"]))) {
+      if (as.numeric(pc[i,"PCSTRESN"]) < as.numeric(pc[i,"PCLLOQ"])) {
+        pc[i,"PCSTRESN"] = "0"
+      }
+    } 
+  }
 
   if (study[1] == "") study = sort(unique(pc[,"STUDYID"]))
   if (trt[1] == "") trt = sort(unique(ex[,"EXTRT"]))
@@ -45,13 +52,13 @@ rNCA = function(ex, pc, study="", trt="", id="", analyte="", codeBQL=c("< 0", "N
     EXi = unique(EX1[EX1[,"USUBJID"]==cID, c("STUDYID", "USUBJID", "EXTRT", "EXDOSE", "EXDOSU", "EXROUTE", "EXSTDTC", "EXENDTC")])
     nEXi = nrow(EXi)
     PCi = PC1[PC1[,"USUBJID"]==cID,]
-    if (nEXi == 1) {
+    if (nEXi == 1) {  # single dosing
       cStudy = EXi[1,"STUDYID"]
       cSubj = EXi[1, "USUBJID"]
       cTrt = EXi[1, "EXTRT"]
       cRefTime = EXi[1, "EXSTDTC"]
       PCy = PCi[,c("PCTESTCD", "PCDTC", "PCSTRESN", "PCSTRESU")]
-      if (nAnal == 1) {
+      if (nAnal == 1) { # single molecule
         if (sum(as.numeric(PCy[,"PCSTRESN"]) > 0) > MinPoints) {
 #print(paste(i))
           Res0 = NCA0(EXi[1,], PCy, fit=fit)
@@ -61,7 +68,7 @@ rNCA = function(ex, pc, study="", trt="", id="", analyte="", codeBQL=c("< 0", "N
           Res = rbind(Res, Res1)
         }
       } else {
-        for (j in 1:nAnal) {
+        for (j in 1:nAnal) { # multiple molecules
           cAnalyte = analyte[j]
           PCy2 = PCy[PCy[,"PCTESTCD"] == cAnalyte,]
           if (sum(as.numeric(PCy2[,"PCSTRESN"]) > 0) > MinPoints) {

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Noncompartmental analysis for a dataset with multiple subjects <U+2014> NCA <U+653C><U+3E32>€ãå<U+3E32> pkr</title>
+<title>Noncompartmental analysis for a dataset with multiple subjects â€” NCA â€¢ pkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Noncompartmental analysis for a dataset with multiple subjects â€” NCA" />
+
+<meta property="og:description" content="conduct noncompartmental analysis for many subjects in a data table" />
+<meta name="twitter:card" content="summary" />
+
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +59,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">pkr</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">pkr</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -65,6 +81,7 @@
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -72,21 +89,25 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Noncompartmental analysis for a dataset with multiple subjects</h1>
+    
+    <div class="hidden name"><code>NCA.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>conduct noncompartmental analysis for many subjects in a data table</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>NCA</span>(<span class='no'>concData</span>, <span class='no'>id</span>, <span class='no'>Time</span>, <span class='no'>conc</span>, <span class='kw'>trt</span><span class='kw'>=</span><span class='st'>""</span>, <span class='kw'>fit</span> <span class='kw'>=</span> <span class='st'>"Linear"</span>, <span class='kw'>dose</span> <span class='kw'>=</span> <span class='fl'>0</span>,
            <span class='kw'>adm</span> <span class='kw'>=</span> <span class='st'>"Extravascular"</span>, <span class='kw'>dur</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>report</span> <span class='kw'>=</span> <span class='st'>"Table"</span>, <span class='kw'>iAUC</span> <span class='kw'>=</span> <span class='st'>""</span>,
            <span class='kw'>uTime</span> <span class='kw'>=</span> <span class='st'>"h"</span>, <span class='kw'>uConc</span> <span class='kw'>=</span> <span class='st'>"ug/L"</span>, <span class='kw'>uDose</span> <span class='kw'>=</span> <span class='st'>"mg"</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -215,7 +236,7 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <p><code><a href='IndiNCA.html'>IndiNCA</a></code></p>
+    <div class='dont-index'><p><code><a href='sNCA.html'>sNCA</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -247,31 +268,31 @@
 #&gt; 11   9.03  24.08       3 -0.9999991 0.9999983 0.9999965  80.09360  80.09360
 #&gt; 12   9.03  24.15       3 -0.9996984 0.9993968 0.9987936 119.97750 119.97750
 #&gt;       AUCIFO   AUCIFOD    AUCPEO    AUCIFP   AUCIFPD    AUCPEP   AUMCLST
-#&gt; 1  216.61193 0.6769123 31.248917 216.61496 0.6769217 31.249876 1459.0711
-#&gt; 2  100.17346 0.3130421  8.631687 100.06432 0.3127010  8.532030  706.5866
-#&gt; 3  109.53597 0.3422999  9.357173 109.58572 0.3424554  9.398325  803.1859
-#&gt; 4  118.37888 0.3699340  9.784331 118.44356 0.3701361  9.833594  901.0842
-#&gt; 5  139.41978 0.4356868 13.000579 139.25463 0.4351707 12.897403 1017.1143
-#&gt; 6   84.25442 0.2632951 12.437174  84.49670 0.2640522 12.688246  609.1524
-#&gt; 7  103.77180 0.3242869 12.545221 103.89315 0.3246661 12.647366  782.4199
-#&gt; 8  103.90669 0.3247084 14.769730 103.64305 0.3238845 14.552931  739.5346
-#&gt; 9   99.90872 0.3122147 13.594978  99.86607 0.3120815 13.558076  705.2296
-#&gt; 10 170.65206 0.5332877 18.918002 170.56791 0.5330247 18.878001 1278.1800
-#&gt; 11  89.10274 0.2784461 10.110962  89.10072 0.2784397 10.108918  617.2422
-#&gt; 12 130.58883 0.4080901  8.125757 130.63907 0.4082471  8.161087  977.8807
-#&gt;      AUMCIFO  AUMCPEO   AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
-#&gt; 1  4505.5348 67.61603 4505.6709 67.61701 9.797483 20.800031 20.800368 30.48675
-#&gt; 2   999.7723 29.32525  996.0716 29.06267 7.719996  9.980411  9.954313 30.69044
-#&gt; 3  1150.9648 30.21629 1152.6529 30.31850 8.089578 10.507642 10.518276 28.51710
-#&gt; 4  1303.2524 30.85881 1305.4981 30.97775 8.437410 11.009163 11.022112 27.22596
-#&gt; 5  1667.7216 39.01174 1661.7937 38.79419 8.385501 11.961873 11.933490 26.49799
-#&gt; 6   978.4285 37.74176  986.9665 38.28034 8.256833 11.612785 11.680533 43.25973
-#&gt; 7  1245.0984 37.16000 1249.4111 37.37691 8.621383 11.998427 12.025924 34.90844
-#&gt; 8  1298.1158 43.03015 1288.5201 42.60589 8.350666 12.493092 12.432287 37.81051
-#&gt; 9  1201.7715 41.31750 1200.2124 41.24126 8.169363 12.028695 12.018220 38.84279
-#&gt; 10 2473.9934 48.33535 2470.8765 48.27018 9.237534 14.497296 14.486174 25.01554
-#&gt; 11  928.5600 33.52694  928.4900 33.52193 7.706511 10.421227 10.420679 37.62219
-#&gt; 12 1330.3840 26.49636 1332.0528 26.58844 8.150534 10.187579 10.196436 22.22429
+#&gt; 1  216.61193 0.6769123 216.61496 0.6769217 31.248917 31.249876 1459.0711
+#&gt; 2  100.17346 0.3130421 100.06432 0.3127010  8.631687  8.532030  706.5866
+#&gt; 3  109.53597 0.3422999 109.58572 0.3424554  9.357173  9.398325  803.1859
+#&gt; 4  118.37888 0.3699340 118.44356 0.3701361  9.784331  9.833594  901.0842
+#&gt; 5  139.41978 0.4356868 139.25463 0.4351707 13.000579 12.897403 1017.1143
+#&gt; 6   84.25442 0.2632951  84.49670 0.2640522 12.437174 12.688246  609.1524
+#&gt; 7  103.77180 0.3242869 103.89315 0.3246661 12.545221 12.647366  782.4199
+#&gt; 8  103.90669 0.3247084 103.64305 0.3238845 14.769730 14.552931  739.5346
+#&gt; 9   99.90872 0.3122147  99.86607 0.3120815 13.594978 13.558076  705.2296
+#&gt; 10 170.65206 0.5332877 170.56791 0.5330247 18.918002 18.878001 1278.1800
+#&gt; 11  89.10274 0.2784461  89.10072 0.2784397 10.110962 10.108918  617.2422
+#&gt; 12 130.58883 0.4080901 130.63907 0.4082471  8.125757  8.161087  977.8807
+#&gt;      AUMCIFO   AUMCPEO  AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
+#&gt; 1  4505.5348 4505.6709 67.61603 67.61701 9.797483 20.800031 20.800368 30.48675
+#&gt; 2   999.7723  996.0716 29.32525 29.06267 7.719996  9.980411  9.954313 30.69044
+#&gt; 3  1150.9648 1152.6529 30.21629 30.31850 8.089578 10.507642 10.518276 28.51710
+#&gt; 4  1303.2524 1305.4981 30.85881 30.97775 8.437410 11.009163 11.022112 27.22596
+#&gt; 5  1667.7216 1661.7937 39.01174 38.79419 8.385501 11.961873 11.933490 26.49799
+#&gt; 6   978.4285  986.9665 37.74176 38.28034 8.256833 11.612785 11.680533 43.25973
+#&gt; 7  1245.0984 1249.4111 37.16000 37.37691 8.621383 11.998427 12.025924 34.90844
+#&gt; 8  1298.1158 1288.5201 43.03015 42.60589 8.350666 12.493092 12.432287 37.81051
+#&gt; 9  1201.7715 1200.2124 41.31750 41.24126 8.169363 12.028695 12.018220 38.84279
+#&gt; 10 2473.9934 2470.8765 48.33535 48.27018 9.237534 14.497296 14.486174 25.01554
+#&gt; 11  928.5600  928.4900 33.52694 33.52193 7.706511 10.421227 10.420679 37.62219
+#&gt; 12 1330.3840 1332.0528 26.49636 26.58844 8.150534 10.187579 10.196436 22.22429
 #&gt;        VZFP     CLFO     CLFP
 #&gt; 1  30.48632 1.477296 1.477276
 #&gt; 2  30.72392 3.194459 3.197943
@@ -284,34 +305,34 @@
 #&gt; 9  38.85938 3.202924 3.204292
 #&gt; 10 25.02788 1.875160 1.876086
 #&gt; 11 37.62304 3.591360 3.591441
-#&gt; 12 22.21575 2.450439 2.449497</div><div class='input'><span class='fu'>NCA</span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX       C0  AUCPBEO  AUCPBEP CLST      CLSTP TLST
-#&gt; 1       1 1.50 0.0600 0.25 2.393617 20.65564 20.64189 0.05 0.05024851    8
-#&gt; 2       2 2.03 0.0812 0.25 2.528160 16.21809 16.29857 0.08 0.07475591    8
-#&gt; 3       3 2.72 0.1088 0.25 4.965369 25.65866 26.32577 0.08 0.03997258    8
-#&gt; 4       4 1.85 0.0740 0.25 2.462230 18.34071 18.87718 0.07 0.03196011    8
-#&gt; 5       5 2.05 0.0820 0.25 4.040865 28.23768 28.67652 0.06 0.04957149    8
-#&gt; 6       6 2.31 0.0924 0.25 3.705625 20.94411 21.51637 0.09 0.05624247    8
-#&gt;     LAMZHL      LAMZ LAMZLL LAMZUL LAMZNPT     CORRXY        R2     R2ADJ
-#&gt; 1 4.378127 0.1583205   5.00      8       3 -0.9985323 0.9970667 0.9941335
-#&gt; 2 2.293063 0.3022800   0.75      8       9 -0.9734830 0.9476691 0.9401933
-#&gt; 3 1.642947 0.4218926   0.50      8      10 -0.9358558 0.8758261 0.8603043
-#&gt; 4 1.521910 0.4554455   0.25      8      11 -0.9342510 0.8728249 0.8586943
-#&gt; 5 2.742446 0.2527478   1.00      8       8 -0.9355449 0.8752442 0.8544516
-#&gt; 6 1.960699 0.3535205   0.75      8       9 -0.9507649 0.9039538 0.8902329
-#&gt;     AUCLST   AUCALL   AUCIFO    AUCIFOD    AUCPEO   AUCIFP    AUCIFPD    AUCPEP
-#&gt; 1 2.040452 2.040452 2.356267 0.09425069 13.403196 2.357837 0.09431348 13.460844
-#&gt; 2 3.248520 3.248520 3.513175 0.14052701  7.533221 3.495827 0.13983307  7.074344
-#&gt; 3 3.554421 3.554421 3.744043 0.14976171  5.064624 3.649167 0.14596668  2.596369
-#&gt; 4 2.785279 2.785279 2.938974 0.11755898  5.229568 2.855452 0.11421808  2.457520
-#&gt; 5 2.458858 2.458858 2.696249 0.10784996  8.804484 2.654988 0.10619954  7.387236
-#&gt; 6 3.335703 3.335703 3.590285 0.14361141  7.090860 3.494796 0.13979183  4.552269
+#&gt; 12 22.21575 2.450439 2.449497</div><div class='input'><span class='fu'>NCA</span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX   C0    AUCPBEO AUCPBEP     CLST     CLSTP TLST
+#&gt; 1       1 1.50 0.0600 0.25 0.05 0.05024851       8 4.378127 0.1583205 5.00
+#&gt; 2       2 2.03 0.0812 0.25 0.08 0.07475591       8 2.293063 0.3022800 0.75
+#&gt; 3       3 2.72 0.1088 0.25 0.08 0.03997258       8 1.642947 0.4218926 0.50
+#&gt; 4       4 1.85 0.0740 0.25 0.07 0.03196011       8 1.521910 0.4554455 0.25
+#&gt; 5       5 2.05 0.0820 0.25 0.06 0.04957149       8 2.742446 0.2527478 1.00
+#&gt; 6       6 2.31 0.0924 0.25 0.09 0.05624247       8 1.960699 0.3535205 0.75
+#&gt;   LAMZHL LAMZ     LAMZLL    LAMZUL   LAMZNPT   CORRXY       R2    R2ADJ
+#&gt; 1      8    3 -0.9985323 0.9970667 0.9941335 2.393617 2.040452 2.040452
+#&gt; 2      8    9 -0.9734830 0.9476691 0.9401933 2.528160 3.248520 3.248520
+#&gt; 3      8   10 -0.9358558 0.8758261 0.8603043 4.965369 3.554421 3.554421
+#&gt; 4      8   11 -0.9342510 0.8728249 0.8586943 2.462230 2.785279 2.785279
+#&gt; 5      8    8 -0.9355449 0.8752442 0.8544516 4.040865 2.458858 2.458858
+#&gt; 6      8    9 -0.9507649 0.9039538 0.8902329 3.705625 3.335703 3.335703
+#&gt;     AUCLST     AUCALL   AUCIFO    AUCIFOD    AUCPEO    AUCIFP  AUCIFPD   AUCPEP
+#&gt; 1 2.356267 0.09425069 2.357837 0.09431348 13.403196 13.460844 20.65564 20.64189
+#&gt; 2 3.513175 0.14052701 3.495827 0.13983307  7.533221  7.074344 16.21809 16.29857
+#&gt; 3 3.744043 0.14976171 3.649167 0.14596668  5.064624  2.596369 25.65866 26.32577
+#&gt; 4 2.938974 0.11755898 2.855452 0.11421808  5.229568  2.457520 18.34071 18.87718
+#&gt; 5 2.696249 0.10784996 2.654988 0.10619954  8.804484  7.387236 28.23768 28.67652
+#&gt; 6 3.590285 0.14361141 3.494796 0.13979183  7.090860  4.552269 20.94411 21.51637
 #&gt;    AUMCLST  AUMCIFO  AUMCPEO  AUMCIFP  AUMCPEP MRTIVLST MRTIVIFO MRTIVIFP
-#&gt; 1 3.271250 7.792554 58.02083 7.815026 58.14153 1.603199 3.307161 3.314490
-#&gt; 2 6.398750 9.391522 31.86674 9.195343 30.41314 1.969743 2.673229 2.630377
-#&gt; 3 5.006250 6.972678 28.20191 5.988790 16.40632 1.408457 1.862339 1.641139
-#&gt; 4 4.381875 5.948903 26.34146 5.097338 14.03601 1.573227 2.024142 1.785125
-#&gt; 5 3.707500 6.545866 43.36120 6.052534 38.74467 1.507814 2.427768 2.279684
-#&gt; 6 5.532500 8.289291 33.25726 7.255264 23.74502 1.658571 2.308811 2.076019
+#&gt; 1 3.271250 7.792554 7.815026 58.02083 58.14153 1.603199 3.307161 3.314490
+#&gt; 2 6.398750 9.391522 9.195343 31.86674 30.41314 1.969743 2.673229 2.630377
+#&gt; 3 5.006250 6.972678 5.988790 28.20191 16.40632 1.408457 1.862339 1.641139
+#&gt; 4 4.381875 5.948903 5.097338 26.34146 14.03601 1.573227 2.024142 1.785125
+#&gt; 5 3.707500 6.545866 6.052534 43.36120 38.74467 1.507814 2.427768 2.279684
+#&gt; 6 5.532500 8.289291 7.255264 33.25726 23.74502 1.658571 2.308811 2.076019
 #&gt;        VZO      VZP       CLO       CLP     VSSO     VSSP
 #&gt; 1 67.01598 66.97136 10.610002 10.602939 35.08898 35.14333
 #&gt; 2 23.54132 23.65814  7.116070  7.151384 19.02289 18.81084
@@ -321,7 +342,7 @@
 #&gt; 6 19.69683 20.23502  6.963235  7.153494 16.07680 14.85079</div><div class='input'>
 <span class='no'>iAUC</span> <span class='kw'>=</span> <span class='fu'>data.frame</span>(<span class='kw'>Name</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"AUC[0-12h]"</span>,<span class='st'>"AUC[0-24h]"</span>), <span class='kw'>Start</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>0</span>), <span class='kw'>End</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>12</span>,<span class='fl'>24</span>)) ; <span class='no'>iAUC</span></div><div class='output co'>#&gt;         Name Start End
 #&gt; 1 AUC[0-12h]     0  12
-#&gt; 2 AUC[0-24h]     0  24</div><div class='input'><span class='fu'>NCA</span>(<span class='no'>Theoph</span>, <span class='st'>"Subject"</span>, <span class='st'>"Time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt;    Subject  CMAX      CMAXD TMAX TLAG CLST     CLSTP  TLST    LAMZHL       LAMZ
+#&gt; 2 AUC[0-24h]     0  24</div><div class='input'><span class='fu'>NCA</span>(<span class='no'>Theoph</span>, <span class='st'>"Subject"</span>, <span class='st'>"Time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;    Subject  CMAX      CMAXD TMAX TLAG CLST     CLSTP  TLST    LAMZHL       LAMZ
 #&gt; 1        1 10.50 0.03281250 1.12    0 3.28 3.2801465 24.37 14.304378 0.04845700
 #&gt; 2        2  8.33 0.02603125 1.92    0 0.90 0.8886398 24.30  6.659342 0.10408644
 #&gt; 3        3  8.20 0.02562500 1.02    0 1.05 1.0550967 24.17  6.766087 0.10244431
@@ -348,31 +369,31 @@
 #&gt; 11   9.03  24.08       3 -0.9999991 0.9999983 0.9999965  80.09360  80.09360
 #&gt; 12   9.03  24.15       3 -0.9996984 0.9993968 0.9987936 119.97750 119.97750
 #&gt;       AUCIFO   AUCIFOD    AUCPEO    AUCIFP   AUCIFPD    AUCPEP   AUMCLST
-#&gt; 1  216.61193 0.6769123 31.248917 216.61496 0.6769217 31.249876 1459.0711
-#&gt; 2  100.17346 0.3130421  8.631687 100.06432 0.3127010  8.532030  706.5866
-#&gt; 3  109.53597 0.3422999  9.357173 109.58572 0.3424554  9.398325  803.1859
-#&gt; 4  118.37888 0.3699340  9.784331 118.44356 0.3701361  9.833594  901.0842
-#&gt; 5  139.41978 0.4356868 13.000579 139.25463 0.4351707 12.897403 1017.1143
-#&gt; 6   84.25442 0.2632951 12.437174  84.49670 0.2640522 12.688246  609.1524
-#&gt; 7  103.77180 0.3242869 12.545221 103.89315 0.3246661 12.647366  782.4199
-#&gt; 8  103.90669 0.3247084 14.769730 103.64305 0.3238845 14.552931  739.5346
-#&gt; 9   99.90872 0.3122147 13.594978  99.86607 0.3120815 13.558076  705.2296
-#&gt; 10 170.65206 0.5332877 18.918002 170.56791 0.5330247 18.878001 1278.1800
-#&gt; 11  89.10274 0.2784461 10.110962  89.10072 0.2784397 10.108918  617.2422
-#&gt; 12 130.58883 0.4080901  8.125757 130.63907 0.4082471  8.161087  977.8807
-#&gt;      AUMCIFO  AUMCPEO   AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
-#&gt; 1  4505.5348 67.61603 4505.6709 67.61701 9.797483 20.800031 20.800368 30.48675
-#&gt; 2   999.7723 29.32525  996.0716 29.06267 7.719996  9.980411  9.954313 30.69044
-#&gt; 3  1150.9648 30.21629 1152.6529 30.31850 8.089578 10.507642 10.518276 28.51710
-#&gt; 4  1303.2524 30.85881 1305.4981 30.97775 8.437410 11.009163 11.022112 27.22596
-#&gt; 5  1667.7216 39.01174 1661.7937 38.79419 8.385501 11.961873 11.933490 26.49799
-#&gt; 6   978.4285 37.74176  986.9665 38.28034 8.256833 11.612785 11.680533 43.25973
-#&gt; 7  1245.0984 37.16000 1249.4111 37.37691 8.621383 11.998427 12.025924 34.90844
-#&gt; 8  1298.1158 43.03015 1288.5201 42.60589 8.350666 12.493092 12.432287 37.81051
-#&gt; 9  1201.7715 41.31750 1200.2124 41.24126 8.169363 12.028695 12.018220 38.84279
-#&gt; 10 2473.9934 48.33535 2470.8765 48.27018 9.237534 14.497296 14.486174 25.01554
-#&gt; 11  928.5600 33.52694  928.4900 33.52193 7.706511 10.421227 10.420679 37.62219
-#&gt; 12 1330.3840 26.49636 1332.0528 26.58844 8.150534 10.187579 10.196436 22.22429
+#&gt; 1  216.61193 0.6769123 216.61496 0.6769217 31.248917 31.249876 1459.0711
+#&gt; 2  100.17346 0.3130421 100.06432 0.3127010  8.631687  8.532030  706.5866
+#&gt; 3  109.53597 0.3422999 109.58572 0.3424554  9.357173  9.398325  803.1859
+#&gt; 4  118.37888 0.3699340 118.44356 0.3701361  9.784331  9.833594  901.0842
+#&gt; 5  139.41978 0.4356868 139.25463 0.4351707 13.000579 12.897403 1017.1143
+#&gt; 6   84.25442 0.2632951  84.49670 0.2640522 12.437174 12.688246  609.1524
+#&gt; 7  103.77180 0.3242869 103.89315 0.3246661 12.545221 12.647366  782.4199
+#&gt; 8  103.90669 0.3247084 103.64305 0.3238845 14.769730 14.552931  739.5346
+#&gt; 9   99.90872 0.3122147  99.86607 0.3120815 13.594978 13.558076  705.2296
+#&gt; 10 170.65206 0.5332877 170.56791 0.5330247 18.918002 18.878001 1278.1800
+#&gt; 11  89.10274 0.2784461  89.10072 0.2784397 10.110962 10.108918  617.2422
+#&gt; 12 130.58883 0.4080901 130.63907 0.4082471  8.125757  8.161087  977.8807
+#&gt;      AUMCIFO   AUMCPEO  AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
+#&gt; 1  4505.5348 4505.6709 67.61603 67.61701 9.797483 20.800031 20.800368 30.48675
+#&gt; 2   999.7723  996.0716 29.32525 29.06267 7.719996  9.980411  9.954313 30.69044
+#&gt; 3  1150.9648 1152.6529 30.21629 30.31850 8.089578 10.507642 10.518276 28.51710
+#&gt; 4  1303.2524 1305.4981 30.85881 30.97775 8.437410 11.009163 11.022112 27.22596
+#&gt; 5  1667.7216 1661.7937 39.01174 38.79419 8.385501 11.961873 11.933490 26.49799
+#&gt; 6   978.4285  986.9665 37.74176 38.28034 8.256833 11.612785 11.680533 43.25973
+#&gt; 7  1245.0984 1249.4111 37.16000 37.37691 8.621383 11.998427 12.025924 34.90844
+#&gt; 8  1298.1158 1288.5201 43.03015 42.60589 8.350666 12.493092 12.432287 37.81051
+#&gt; 9  1201.7715 1200.2124 41.31750 41.24126 8.169363 12.028695 12.018220 38.84279
+#&gt; 10 2473.9934 2470.8765 48.33535 48.27018 9.237534 14.497296 14.486174 25.01554
+#&gt; 11  928.5600  928.4900 33.52694 33.52193 7.706511 10.421227 10.420679 37.62219
+#&gt; 12 1330.3840 1332.0528 26.49636 26.58844 8.150534 10.187579 10.196436 22.22429
 #&gt;        VZFP     CLFO     CLFP AUC[0-12h] AUC[0-24h]
 #&gt; 1  30.48632 1.477296 1.477276   91.73552  147.69459
 #&gt; 2  30.72392 3.194459 3.197943   67.48030   91.24908
@@ -385,34 +406,34 @@
 #&gt; 9  38.85938 3.202924 3.204292   60.12123   85.82985
 #&gt; 10 25.02788 1.875160 1.876086   90.81742  139.08507
 #&gt; 11 37.62304 3.591360 3.591441   58.53963   80.02431
-#&gt; 12 22.21575 2.450439 2.449497   85.02136  119.79884</div><div class='input'><span class='fu'>NCA</span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX       C0  AUCPBEO  AUCPBEP CLST      CLSTP TLST
-#&gt; 1       1 1.50 0.0600 0.25 2.393617 20.65564 20.64189 0.05 0.05024851    8
-#&gt; 2       2 2.03 0.0812 0.25 2.528160 16.21809 16.29857 0.08 0.07475591    8
-#&gt; 3       3 2.72 0.1088 0.25 4.965369 25.65866 26.32577 0.08 0.03997258    8
-#&gt; 4       4 1.85 0.0740 0.25 2.462230 18.34071 18.87718 0.07 0.03196011    8
-#&gt; 5       5 2.05 0.0820 0.25 4.040865 28.23768 28.67652 0.06 0.04957149    8
-#&gt; 6       6 2.31 0.0924 0.25 3.705625 20.94411 21.51637 0.09 0.05624247    8
-#&gt;     LAMZHL      LAMZ LAMZLL LAMZUL LAMZNPT     CORRXY        R2     R2ADJ
-#&gt; 1 4.378127 0.1583205   5.00      8       3 -0.9985323 0.9970667 0.9941335
-#&gt; 2 2.293063 0.3022800   0.75      8       9 -0.9734830 0.9476691 0.9401933
-#&gt; 3 1.642947 0.4218926   0.50      8      10 -0.9358558 0.8758261 0.8603043
-#&gt; 4 1.521910 0.4554455   0.25      8      11 -0.9342510 0.8728249 0.8586943
-#&gt; 5 2.742446 0.2527478   1.00      8       8 -0.9355449 0.8752442 0.8544516
-#&gt; 6 1.960699 0.3535205   0.75      8       9 -0.9507649 0.9039538 0.8902329
-#&gt;     AUCLST   AUCALL   AUCIFO    AUCIFOD    AUCPEO   AUCIFP    AUCIFPD    AUCPEP
-#&gt; 1 2.040452 2.040452 2.356267 0.09425069 13.403196 2.357837 0.09431348 13.460844
-#&gt; 2 3.248520 3.248520 3.513175 0.14052701  7.533221 3.495827 0.13983307  7.074344
-#&gt; 3 3.554421 3.554421 3.744043 0.14976171  5.064624 3.649167 0.14596668  2.596369
-#&gt; 4 2.785279 2.785279 2.938974 0.11755898  5.229568 2.855452 0.11421808  2.457520
-#&gt; 5 2.458858 2.458858 2.696249 0.10784996  8.804484 2.654988 0.10619954  7.387236
-#&gt; 6 3.335703 3.335703 3.590285 0.14361141  7.090860 3.494796 0.13979183  4.552269
+#&gt; 12 22.21575 2.450439 2.449497   85.02136  119.79884</div><div class='input'><span class='fu'>NCA</span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX   C0    AUCPBEO AUCPBEP     CLST     CLSTP TLST
+#&gt; 1       1 1.50 0.0600 0.25 0.05 0.05024851       8 4.378127 0.1583205 5.00
+#&gt; 2       2 2.03 0.0812 0.25 0.08 0.07475591       8 2.293063 0.3022800 0.75
+#&gt; 3       3 2.72 0.1088 0.25 0.08 0.03997258       8 1.642947 0.4218926 0.50
+#&gt; 4       4 1.85 0.0740 0.25 0.07 0.03196011       8 1.521910 0.4554455 0.25
+#&gt; 5       5 2.05 0.0820 0.25 0.06 0.04957149       8 2.742446 0.2527478 1.00
+#&gt; 6       6 2.31 0.0924 0.25 0.09 0.05624247       8 1.960699 0.3535205 0.75
+#&gt;   LAMZHL LAMZ     LAMZLL    LAMZUL   LAMZNPT   CORRXY       R2    R2ADJ
+#&gt; 1      8    3 -0.9985323 0.9970667 0.9941335 2.393617 2.040452 2.040452
+#&gt; 2      8    9 -0.9734830 0.9476691 0.9401933 2.528160 3.248520 3.248520
+#&gt; 3      8   10 -0.9358558 0.8758261 0.8603043 4.965369 3.554421 3.554421
+#&gt; 4      8   11 -0.9342510 0.8728249 0.8586943 2.462230 2.785279 2.785279
+#&gt; 5      8    8 -0.9355449 0.8752442 0.8544516 4.040865 2.458858 2.458858
+#&gt; 6      8    9 -0.9507649 0.9039538 0.8902329 3.705625 3.335703 3.335703
+#&gt;     AUCLST     AUCALL   AUCIFO    AUCIFOD    AUCPEO    AUCIFP  AUCIFPD   AUCPEP
+#&gt; 1 2.356267 0.09425069 2.357837 0.09431348 13.403196 13.460844 20.65564 20.64189
+#&gt; 2 3.513175 0.14052701 3.495827 0.13983307  7.533221  7.074344 16.21809 16.29857
+#&gt; 3 3.744043 0.14976171 3.649167 0.14596668  5.064624  2.596369 25.65866 26.32577
+#&gt; 4 2.938974 0.11755898 2.855452 0.11421808  5.229568  2.457520 18.34071 18.87718
+#&gt; 5 2.696249 0.10784996 2.654988 0.10619954  8.804484  7.387236 28.23768 28.67652
+#&gt; 6 3.590285 0.14361141 3.494796 0.13979183  7.090860  4.552269 20.94411 21.51637
 #&gt;    AUMCLST  AUMCIFO  AUMCPEO  AUMCIFP  AUMCPEP MRTIVLST MRTIVIFO MRTIVIFP
-#&gt; 1 3.271250 7.792554 58.02083 7.815026 58.14153 1.603199 3.307161 3.314490
-#&gt; 2 6.398750 9.391522 31.86674 9.195343 30.41314 1.969743 2.673229 2.630377
-#&gt; 3 5.006250 6.972678 28.20191 5.988790 16.40632 1.408457 1.862339 1.641139
-#&gt; 4 4.381875 5.948903 26.34146 5.097338 14.03601 1.573227 2.024142 1.785125
-#&gt; 5 3.707500 6.545866 43.36120 6.052534 38.74467 1.507814 2.427768 2.279684
-#&gt; 6 5.532500 8.289291 33.25726 7.255264 23.74502 1.658571 2.308811 2.076019
+#&gt; 1 3.271250 7.792554 7.815026 58.02083 58.14153 1.603199 3.307161 3.314490
+#&gt; 2 6.398750 9.391522 9.195343 31.86674 30.41314 1.969743 2.673229 2.630377
+#&gt; 3 5.006250 6.972678 5.988790 28.20191 16.40632 1.408457 1.862339 1.641139
+#&gt; 4 4.381875 5.948903 5.097338 26.34146 14.03601 1.573227 2.024142 1.785125
+#&gt; 5 3.707500 6.545866 6.052534 43.36120 38.74467 1.507814 2.427768 2.279684
+#&gt; 6 5.532500 8.289291 7.255264 33.25726 23.74502 1.658571 2.308811 2.076019
 #&gt;        VZO      VZP       CLO       CLP     VSSO     VSSP AUC[0-12h] AUC[0-24h]
 #&gt; 1 67.01598 66.97136 10.610002 10.602939 35.08898 35.14333   2.188947   2.331634
 #&gt; 2 23.54132 23.65814  7.116070  7.151384 19.02289 18.81084   3.429231   3.507581
@@ -460,11 +481,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pharmacokinetics in R <U+2014> pkr-package <U+653C><U+3E32>€ãå<U+3E32> pkr</title>
+<title>Pharmacokinetics in R â€” pkr-package â€¢ pkr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -18,13 +18,25 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Pharmacokinetics in R â€” pkr-package" />
+
+<meta property="og:description" content="It conducts a noncompartmental analysis(NCA) as closely as possible to the most widely used commercial pharmacokinetic analysis software." />
+<meta name="twitter:card" content="summary" />
+
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +59,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">pkr</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">pkr</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.2</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -65,6 +81,7 @@
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -72,15 +89,19 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Pharmacokinetics in R</h1>
+    
+    <div class="hidden name"><code>pkr-package.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>It conducts a noncompartmental analysis(NCA) as closely as possible to the most widely used commercial pharmacokinetic analysis software.</p>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -129,31 +150,31 @@ NCA	     to perform NCA for many subjects.
 #&gt; 11   9.03  24.08       3 -0.9999991 0.9999983 0.9999965  80.09360  80.09360
 #&gt; 12   9.03  24.15       3 -0.9996984 0.9993968 0.9987936 119.97750 119.97750
 #&gt;       AUCIFO   AUCIFOD    AUCPEO    AUCIFP   AUCIFPD    AUCPEP   AUMCLST
-#&gt; 1  216.61193 0.6769123 31.248917 216.61496 0.6769217 31.249876 1459.0711
-#&gt; 2  100.17346 0.3130421  8.631687 100.06432 0.3127010  8.532030  706.5866
-#&gt; 3  109.53597 0.3422999  9.357173 109.58572 0.3424554  9.398325  803.1859
-#&gt; 4  118.37888 0.3699340  9.784331 118.44356 0.3701361  9.833594  901.0842
-#&gt; 5  139.41978 0.4356868 13.000579 139.25463 0.4351707 12.897403 1017.1143
-#&gt; 6   84.25442 0.2632951 12.437174  84.49670 0.2640522 12.688246  609.1524
-#&gt; 7  103.77180 0.3242869 12.545221 103.89315 0.3246661 12.647366  782.4199
-#&gt; 8  103.90669 0.3247084 14.769730 103.64305 0.3238845 14.552931  739.5346
-#&gt; 9   99.90872 0.3122147 13.594978  99.86607 0.3120815 13.558076  705.2296
-#&gt; 10 170.65206 0.5332877 18.918002 170.56791 0.5330247 18.878001 1278.1800
-#&gt; 11  89.10274 0.2784461 10.110962  89.10072 0.2784397 10.108918  617.2422
-#&gt; 12 130.58883 0.4080901  8.125757 130.63907 0.4082471  8.161087  977.8807
-#&gt;      AUMCIFO  AUMCPEO   AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
-#&gt; 1  4505.5348 67.61603 4505.6709 67.61701 9.797483 20.800031 20.800368 30.48675
-#&gt; 2   999.7723 29.32525  996.0716 29.06267 7.719996  9.980411  9.954313 30.69044
-#&gt; 3  1150.9648 30.21629 1152.6529 30.31850 8.089578 10.507642 10.518276 28.51710
-#&gt; 4  1303.2524 30.85881 1305.4981 30.97775 8.437410 11.009163 11.022112 27.22596
-#&gt; 5  1667.7216 39.01174 1661.7937 38.79419 8.385501 11.961873 11.933490 26.49799
-#&gt; 6   978.4285 37.74176  986.9665 38.28034 8.256833 11.612785 11.680533 43.25973
-#&gt; 7  1245.0984 37.16000 1249.4111 37.37691 8.621383 11.998427 12.025924 34.90844
-#&gt; 8  1298.1158 43.03015 1288.5201 42.60589 8.350666 12.493092 12.432287 37.81051
-#&gt; 9  1201.7715 41.31750 1200.2124 41.24126 8.169363 12.028695 12.018220 38.84279
-#&gt; 10 2473.9934 48.33535 2470.8765 48.27018 9.237534 14.497296 14.486174 25.01554
-#&gt; 11  928.5600 33.52694  928.4900 33.52193 7.706511 10.421227 10.420679 37.62219
-#&gt; 12 1330.3840 26.49636 1332.0528 26.58844 8.150534 10.187579 10.196436 22.22429
+#&gt; 1  216.61193 0.6769123 216.61496 0.6769217 31.248917 31.249876 1459.0711
+#&gt; 2  100.17346 0.3130421 100.06432 0.3127010  8.631687  8.532030  706.5866
+#&gt; 3  109.53597 0.3422999 109.58572 0.3424554  9.357173  9.398325  803.1859
+#&gt; 4  118.37888 0.3699340 118.44356 0.3701361  9.784331  9.833594  901.0842
+#&gt; 5  139.41978 0.4356868 139.25463 0.4351707 13.000579 12.897403 1017.1143
+#&gt; 6   84.25442 0.2632951  84.49670 0.2640522 12.437174 12.688246  609.1524
+#&gt; 7  103.77180 0.3242869 103.89315 0.3246661 12.545221 12.647366  782.4199
+#&gt; 8  103.90669 0.3247084 103.64305 0.3238845 14.769730 14.552931  739.5346
+#&gt; 9   99.90872 0.3122147  99.86607 0.3120815 13.594978 13.558076  705.2296
+#&gt; 10 170.65206 0.5332877 170.56791 0.5330247 18.918002 18.878001 1278.1800
+#&gt; 11  89.10274 0.2784461  89.10072 0.2784397 10.110962 10.108918  617.2422
+#&gt; 12 130.58883 0.4080901 130.63907 0.4082471  8.125757  8.161087  977.8807
+#&gt;      AUMCIFO   AUMCPEO  AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
+#&gt; 1  4505.5348 4505.6709 67.61603 67.61701 9.797483 20.800031 20.800368 30.48675
+#&gt; 2   999.7723  996.0716 29.32525 29.06267 7.719996  9.980411  9.954313 30.69044
+#&gt; 3  1150.9648 1152.6529 30.21629 30.31850 8.089578 10.507642 10.518276 28.51710
+#&gt; 4  1303.2524 1305.4981 30.85881 30.97775 8.437410 11.009163 11.022112 27.22596
+#&gt; 5  1667.7216 1661.7937 39.01174 38.79419 8.385501 11.961873 11.933490 26.49799
+#&gt; 6   978.4285  986.9665 37.74176 38.28034 8.256833 11.612785 11.680533 43.25973
+#&gt; 7  1245.0984 1249.4111 37.16000 37.37691 8.621383 11.998427 12.025924 34.90844
+#&gt; 8  1298.1158 1288.5201 43.03015 42.60589 8.350666 12.493092 12.432287 37.81051
+#&gt; 9  1201.7715 1200.2124 41.31750 41.24126 8.169363 12.028695 12.018220 38.84279
+#&gt; 10 2473.9934 2470.8765 48.33535 48.27018 9.237534 14.497296 14.486174 25.01554
+#&gt; 11  928.5600  928.4900 33.52694 33.52193 7.706511 10.421227 10.420679 37.62219
+#&gt; 12 1330.3840 1332.0528 26.49636 26.58844 8.150534 10.187579 10.196436 22.22429
 #&gt;        VZFP     CLFO     CLFP
 #&gt; 1  30.48632 1.477296 1.477276
 #&gt; 2  30.72392 3.194459 3.197943
@@ -166,34 +187,34 @@ NCA	     to perform NCA for many subjects.
 #&gt; 9  38.85938 3.202924 3.204292
 #&gt; 10 25.02788 1.875160 1.876086
 #&gt; 11 37.62304 3.591360 3.591441
-#&gt; 12 22.21575 2.450439 2.449497</div><div class='input'><span class='fu'><a href='NCA.html'>NCA</a></span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX       C0  AUCPBEO  AUCPBEP CLST      CLSTP TLST
-#&gt; 1       1 1.50 0.0600 0.25 2.393617 20.65564 20.64189 0.05 0.05024851    8
-#&gt; 2       2 2.03 0.0812 0.25 2.528160 16.21809 16.29857 0.08 0.07475591    8
-#&gt; 3       3 2.72 0.1088 0.25 4.965369 25.65866 26.32577 0.08 0.03997258    8
-#&gt; 4       4 1.85 0.0740 0.25 2.462230 18.34071 18.87718 0.07 0.03196011    8
-#&gt; 5       5 2.05 0.0820 0.25 4.040865 28.23768 28.67652 0.06 0.04957149    8
-#&gt; 6       6 2.31 0.0924 0.25 3.705625 20.94411 21.51637 0.09 0.05624247    8
-#&gt;     LAMZHL      LAMZ LAMZLL LAMZUL LAMZNPT     CORRXY        R2     R2ADJ
-#&gt; 1 4.378127 0.1583205   5.00      8       3 -0.9985323 0.9970667 0.9941335
-#&gt; 2 2.293063 0.3022800   0.75      8       9 -0.9734830 0.9476691 0.9401933
-#&gt; 3 1.642947 0.4218926   0.50      8      10 -0.9358558 0.8758261 0.8603043
-#&gt; 4 1.521910 0.4554455   0.25      8      11 -0.9342510 0.8728249 0.8586943
-#&gt; 5 2.742446 0.2527478   1.00      8       8 -0.9355449 0.8752442 0.8544516
-#&gt; 6 1.960699 0.3535205   0.75      8       9 -0.9507649 0.9039538 0.8902329
-#&gt;     AUCLST   AUCALL   AUCIFO    AUCIFOD    AUCPEO   AUCIFP    AUCIFPD    AUCPEP
-#&gt; 1 2.040452 2.040452 2.356267 0.09425069 13.403196 2.357837 0.09431348 13.460844
-#&gt; 2 3.248520 3.248520 3.513175 0.14052701  7.533221 3.495827 0.13983307  7.074344
-#&gt; 3 3.554421 3.554421 3.744043 0.14976171  5.064624 3.649167 0.14596668  2.596369
-#&gt; 4 2.785279 2.785279 2.938974 0.11755898  5.229568 2.855452 0.11421808  2.457520
-#&gt; 5 2.458858 2.458858 2.696249 0.10784996  8.804484 2.654988 0.10619954  7.387236
-#&gt; 6 3.335703 3.335703 3.590285 0.14361141  7.090860 3.494796 0.13979183  4.552269
+#&gt; 12 22.21575 2.450439 2.449497</div><div class='input'><span class='fu'><a href='NCA.html'>NCA</a></span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX   C0    AUCPBEO AUCPBEP     CLST     CLSTP TLST
+#&gt; 1       1 1.50 0.0600 0.25 0.05 0.05024851       8 4.378127 0.1583205 5.00
+#&gt; 2       2 2.03 0.0812 0.25 0.08 0.07475591       8 2.293063 0.3022800 0.75
+#&gt; 3       3 2.72 0.1088 0.25 0.08 0.03997258       8 1.642947 0.4218926 0.50
+#&gt; 4       4 1.85 0.0740 0.25 0.07 0.03196011       8 1.521910 0.4554455 0.25
+#&gt; 5       5 2.05 0.0820 0.25 0.06 0.04957149       8 2.742446 0.2527478 1.00
+#&gt; 6       6 2.31 0.0924 0.25 0.09 0.05624247       8 1.960699 0.3535205 0.75
+#&gt;   LAMZHL LAMZ     LAMZLL    LAMZUL   LAMZNPT   CORRXY       R2    R2ADJ
+#&gt; 1      8    3 -0.9985323 0.9970667 0.9941335 2.393617 2.040452 2.040452
+#&gt; 2      8    9 -0.9734830 0.9476691 0.9401933 2.528160 3.248520 3.248520
+#&gt; 3      8   10 -0.9358558 0.8758261 0.8603043 4.965369 3.554421 3.554421
+#&gt; 4      8   11 -0.9342510 0.8728249 0.8586943 2.462230 2.785279 2.785279
+#&gt; 5      8    8 -0.9355449 0.8752442 0.8544516 4.040865 2.458858 2.458858
+#&gt; 6      8    9 -0.9507649 0.9039538 0.8902329 3.705625 3.335703 3.335703
+#&gt;     AUCLST     AUCALL   AUCIFO    AUCIFOD    AUCPEO    AUCIFP  AUCIFPD   AUCPEP
+#&gt; 1 2.356267 0.09425069 2.357837 0.09431348 13.403196 13.460844 20.65564 20.64189
+#&gt; 2 3.513175 0.14052701 3.495827 0.13983307  7.533221  7.074344 16.21809 16.29857
+#&gt; 3 3.744043 0.14976171 3.649167 0.14596668  5.064624  2.596369 25.65866 26.32577
+#&gt; 4 2.938974 0.11755898 2.855452 0.11421808  5.229568  2.457520 18.34071 18.87718
+#&gt; 5 2.696249 0.10784996 2.654988 0.10619954  8.804484  7.387236 28.23768 28.67652
+#&gt; 6 3.590285 0.14361141 3.494796 0.13979183  7.090860  4.552269 20.94411 21.51637
 #&gt;    AUMCLST  AUMCIFO  AUMCPEO  AUMCIFP  AUMCPEP MRTIVLST MRTIVIFO MRTIVIFP
-#&gt; 1 3.271250 7.792554 58.02083 7.815026 58.14153 1.603199 3.307161 3.314490
-#&gt; 2 6.398750 9.391522 31.86674 9.195343 30.41314 1.969743 2.673229 2.630377
-#&gt; 3 5.006250 6.972678 28.20191 5.988790 16.40632 1.408457 1.862339 1.641139
-#&gt; 4 4.381875 5.948903 26.34146 5.097338 14.03601 1.573227 2.024142 1.785125
-#&gt; 5 3.707500 6.545866 43.36120 6.052534 38.74467 1.507814 2.427768 2.279684
-#&gt; 6 5.532500 8.289291 33.25726 7.255264 23.74502 1.658571 2.308811 2.076019
+#&gt; 1 3.271250 7.792554 7.815026 58.02083 58.14153 1.603199 3.307161 3.314490
+#&gt; 2 6.398750 9.391522 9.195343 31.86674 30.41314 1.969743 2.673229 2.630377
+#&gt; 3 5.006250 6.972678 5.988790 28.20191 16.40632 1.408457 1.862339 1.641139
+#&gt; 4 4.381875 5.948903 5.097338 26.34146 14.03601 1.573227 2.024142 1.785125
+#&gt; 5 3.707500 6.545866 6.052534 43.36120 38.74467 1.507814 2.427768 2.279684
+#&gt; 6 5.532500 8.289291 7.255264 33.25726 23.74502 1.658571 2.308811 2.076019
 #&gt;        VZO      VZP       CLO       CLP     VSSO     VSSP
 #&gt; 1 67.01598 66.97136 10.610002 10.602939 35.08898 35.14333
 #&gt; 2 23.54132 23.65814  7.116070  7.151384 19.02289 18.81084
@@ -203,7 +224,7 @@ NCA	     to perform NCA for many subjects.
 #&gt; 6 19.69683 20.23502  6.963235  7.153494 16.07680 14.85079</div><div class='input'>
 <span class='no'>iAUC</span> <span class='kw'>=</span> <span class='fu'>data.frame</span>(<span class='kw'>Name</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"AUC[0-12h]"</span>,<span class='st'>"AUC[0-24h]"</span>), <span class='kw'>Start</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>0</span>), <span class='kw'>End</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>12</span>,<span class='fl'>24</span>)) ; <span class='no'>iAUC</span></div><div class='output co'>#&gt;         Name Start End
 #&gt; 1 AUC[0-12h]     0  12
-#&gt; 2 AUC[0-24h]     0  24</div><div class='input'><span class='fu'><a href='NCA.html'>NCA</a></span>(<span class='no'>Theoph</span>, <span class='st'>"Subject"</span>, <span class='st'>"Time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt;    Subject  CMAX      CMAXD TMAX TLAG CLST     CLSTP  TLST    LAMZHL       LAMZ
+#&gt; 2 AUC[0-24h]     0  24</div><div class='input'><span class='fu'><a href='NCA.html'>NCA</a></span>(<span class='no'>Theoph</span>, <span class='st'>"Subject"</span>, <span class='st'>"Time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;    Subject  CMAX      CMAXD TMAX TLAG CLST     CLSTP  TLST    LAMZHL       LAMZ
 #&gt; 1        1 10.50 0.03281250 1.12    0 3.28 3.2801465 24.37 14.304378 0.04845700
 #&gt; 2        2  8.33 0.02603125 1.92    0 0.90 0.8886398 24.30  6.659342 0.10408644
 #&gt; 3        3  8.20 0.02562500 1.02    0 1.05 1.0550967 24.17  6.766087 0.10244431
@@ -230,31 +251,31 @@ NCA	     to perform NCA for many subjects.
 #&gt; 11   9.03  24.08       3 -0.9999991 0.9999983 0.9999965  80.09360  80.09360
 #&gt; 12   9.03  24.15       3 -0.9996984 0.9993968 0.9987936 119.97750 119.97750
 #&gt;       AUCIFO   AUCIFOD    AUCPEO    AUCIFP   AUCIFPD    AUCPEP   AUMCLST
-#&gt; 1  216.61193 0.6769123 31.248917 216.61496 0.6769217 31.249876 1459.0711
-#&gt; 2  100.17346 0.3130421  8.631687 100.06432 0.3127010  8.532030  706.5866
-#&gt; 3  109.53597 0.3422999  9.357173 109.58572 0.3424554  9.398325  803.1859
-#&gt; 4  118.37888 0.3699340  9.784331 118.44356 0.3701361  9.833594  901.0842
-#&gt; 5  139.41978 0.4356868 13.000579 139.25463 0.4351707 12.897403 1017.1143
-#&gt; 6   84.25442 0.2632951 12.437174  84.49670 0.2640522 12.688246  609.1524
-#&gt; 7  103.77180 0.3242869 12.545221 103.89315 0.3246661 12.647366  782.4199
-#&gt; 8  103.90669 0.3247084 14.769730 103.64305 0.3238845 14.552931  739.5346
-#&gt; 9   99.90872 0.3122147 13.594978  99.86607 0.3120815 13.558076  705.2296
-#&gt; 10 170.65206 0.5332877 18.918002 170.56791 0.5330247 18.878001 1278.1800
-#&gt; 11  89.10274 0.2784461 10.110962  89.10072 0.2784397 10.108918  617.2422
-#&gt; 12 130.58883 0.4080901  8.125757 130.63907 0.4082471  8.161087  977.8807
-#&gt;      AUMCIFO  AUMCPEO   AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
-#&gt; 1  4505.5348 67.61603 4505.6709 67.61701 9.797483 20.800031 20.800368 30.48675
-#&gt; 2   999.7723 29.32525  996.0716 29.06267 7.719996  9.980411  9.954313 30.69044
-#&gt; 3  1150.9648 30.21629 1152.6529 30.31850 8.089578 10.507642 10.518276 28.51710
-#&gt; 4  1303.2524 30.85881 1305.4981 30.97775 8.437410 11.009163 11.022112 27.22596
-#&gt; 5  1667.7216 39.01174 1661.7937 38.79419 8.385501 11.961873 11.933490 26.49799
-#&gt; 6   978.4285 37.74176  986.9665 38.28034 8.256833 11.612785 11.680533 43.25973
-#&gt; 7  1245.0984 37.16000 1249.4111 37.37691 8.621383 11.998427 12.025924 34.90844
-#&gt; 8  1298.1158 43.03015 1288.5201 42.60589 8.350666 12.493092 12.432287 37.81051
-#&gt; 9  1201.7715 41.31750 1200.2124 41.24126 8.169363 12.028695 12.018220 38.84279
-#&gt; 10 2473.9934 48.33535 2470.8765 48.27018 9.237534 14.497296 14.486174 25.01554
-#&gt; 11  928.5600 33.52694  928.4900 33.52193 7.706511 10.421227 10.420679 37.62219
-#&gt; 12 1330.3840 26.49636 1332.0528 26.58844 8.150534 10.187579 10.196436 22.22429
+#&gt; 1  216.61193 0.6769123 216.61496 0.6769217 31.248917 31.249876 1459.0711
+#&gt; 2  100.17346 0.3130421 100.06432 0.3127010  8.631687  8.532030  706.5866
+#&gt; 3  109.53597 0.3422999 109.58572 0.3424554  9.357173  9.398325  803.1859
+#&gt; 4  118.37888 0.3699340 118.44356 0.3701361  9.784331  9.833594  901.0842
+#&gt; 5  139.41978 0.4356868 139.25463 0.4351707 13.000579 12.897403 1017.1143
+#&gt; 6   84.25442 0.2632951  84.49670 0.2640522 12.437174 12.688246  609.1524
+#&gt; 7  103.77180 0.3242869 103.89315 0.3246661 12.545221 12.647366  782.4199
+#&gt; 8  103.90669 0.3247084 103.64305 0.3238845 14.769730 14.552931  739.5346
+#&gt; 9   99.90872 0.3122147  99.86607 0.3120815 13.594978 13.558076  705.2296
+#&gt; 10 170.65206 0.5332877 170.56791 0.5330247 18.918002 18.878001 1278.1800
+#&gt; 11  89.10274 0.2784461  89.10072 0.2784397 10.110962 10.108918  617.2422
+#&gt; 12 130.58883 0.4080901 130.63907 0.4082471  8.125757  8.161087  977.8807
+#&gt;      AUMCIFO   AUMCPEO  AUMCIFP  AUMCPEP MRTEVLST  MRTEVIFO  MRTEVIFP     VZFO
+#&gt; 1  4505.5348 4505.6709 67.61603 67.61701 9.797483 20.800031 20.800368 30.48675
+#&gt; 2   999.7723  996.0716 29.32525 29.06267 7.719996  9.980411  9.954313 30.69044
+#&gt; 3  1150.9648 1152.6529 30.21629 30.31850 8.089578 10.507642 10.518276 28.51710
+#&gt; 4  1303.2524 1305.4981 30.85881 30.97775 8.437410 11.009163 11.022112 27.22596
+#&gt; 5  1667.7216 1661.7937 39.01174 38.79419 8.385501 11.961873 11.933490 26.49799
+#&gt; 6   978.4285  986.9665 37.74176 38.28034 8.256833 11.612785 11.680533 43.25973
+#&gt; 7  1245.0984 1249.4111 37.16000 37.37691 8.621383 11.998427 12.025924 34.90844
+#&gt; 8  1298.1158 1288.5201 43.03015 42.60589 8.350666 12.493092 12.432287 37.81051
+#&gt; 9  1201.7715 1200.2124 41.31750 41.24126 8.169363 12.028695 12.018220 38.84279
+#&gt; 10 2473.9934 2470.8765 48.33535 48.27018 9.237534 14.497296 14.486174 25.01554
+#&gt; 11  928.5600  928.4900 33.52694 33.52193 7.706511 10.421227 10.420679 37.62219
+#&gt; 12 1330.3840 1332.0528 26.49636 26.58844 8.150534 10.187579 10.196436 22.22429
 #&gt;        VZFP     CLFO     CLFP AUC[0-12h] AUC[0-24h]
 #&gt; 1  30.48632 1.477296 1.477276   91.73552  147.69459
 #&gt; 2  30.72392 3.194459 3.197943   67.48030   91.24908
@@ -267,34 +288,34 @@ NCA	     to perform NCA for many subjects.
 #&gt; 9  38.85938 3.202924 3.204292   60.12123   85.82985
 #&gt; 10 25.02788 1.875160 1.876086   90.81742  139.08507
 #&gt; 11 37.62304 3.591360 3.591441   58.53963   80.02431
-#&gt; 12 22.21575 2.450439 2.449497   85.02136  119.79884</div><div class='input'><span class='fu'><a href='NCA.html'>NCA</a></span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX       C0  AUCPBEO  AUCPBEP CLST      CLSTP TLST
-#&gt; 1       1 1.50 0.0600 0.25 2.393617 20.65564 20.64189 0.05 0.05024851    8
-#&gt; 2       2 2.03 0.0812 0.25 2.528160 16.21809 16.29857 0.08 0.07475591    8
-#&gt; 3       3 2.72 0.1088 0.25 4.965369 25.65866 26.32577 0.08 0.03997258    8
-#&gt; 4       4 1.85 0.0740 0.25 2.462230 18.34071 18.87718 0.07 0.03196011    8
-#&gt; 5       5 2.05 0.0820 0.25 4.040865 28.23768 28.67652 0.06 0.04957149    8
-#&gt; 6       6 2.31 0.0924 0.25 3.705625 20.94411 21.51637 0.09 0.05624247    8
-#&gt;     LAMZHL      LAMZ LAMZLL LAMZUL LAMZNPT     CORRXY        R2     R2ADJ
-#&gt; 1 4.378127 0.1583205   5.00      8       3 -0.9985323 0.9970667 0.9941335
-#&gt; 2 2.293063 0.3022800   0.75      8       9 -0.9734830 0.9476691 0.9401933
-#&gt; 3 1.642947 0.4218926   0.50      8      10 -0.9358558 0.8758261 0.8603043
-#&gt; 4 1.521910 0.4554455   0.25      8      11 -0.9342510 0.8728249 0.8586943
-#&gt; 5 2.742446 0.2527478   1.00      8       8 -0.9355449 0.8752442 0.8544516
-#&gt; 6 1.960699 0.3535205   0.75      8       9 -0.9507649 0.9039538 0.8902329
-#&gt;     AUCLST   AUCALL   AUCIFO    AUCIFOD    AUCPEO   AUCIFP    AUCIFPD    AUCPEP
-#&gt; 1 2.040452 2.040452 2.356267 0.09425069 13.403196 2.357837 0.09431348 13.460844
-#&gt; 2 3.248520 3.248520 3.513175 0.14052701  7.533221 3.495827 0.13983307  7.074344
-#&gt; 3 3.554421 3.554421 3.744043 0.14976171  5.064624 3.649167 0.14596668  2.596369
-#&gt; 4 2.785279 2.785279 2.938974 0.11755898  5.229568 2.855452 0.11421808  2.457520
-#&gt; 5 2.458858 2.458858 2.696249 0.10784996  8.804484 2.654988 0.10619954  7.387236
-#&gt; 6 3.335703 3.335703 3.590285 0.14361141  7.090860 3.494796 0.13979183  4.552269
+#&gt; 12 22.21575 2.450439 2.449497   85.02136  119.79884</div><div class='input'><span class='fu'><a href='NCA.html'>NCA</a></span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;   Subject CMAX  CMAXD TMAX   C0    AUCPBEO AUCPBEP     CLST     CLSTP TLST
+#&gt; 1       1 1.50 0.0600 0.25 0.05 0.05024851       8 4.378127 0.1583205 5.00
+#&gt; 2       2 2.03 0.0812 0.25 0.08 0.07475591       8 2.293063 0.3022800 0.75
+#&gt; 3       3 2.72 0.1088 0.25 0.08 0.03997258       8 1.642947 0.4218926 0.50
+#&gt; 4       4 1.85 0.0740 0.25 0.07 0.03196011       8 1.521910 0.4554455 0.25
+#&gt; 5       5 2.05 0.0820 0.25 0.06 0.04957149       8 2.742446 0.2527478 1.00
+#&gt; 6       6 2.31 0.0924 0.25 0.09 0.05624247       8 1.960699 0.3535205 0.75
+#&gt;   LAMZHL LAMZ     LAMZLL    LAMZUL   LAMZNPT   CORRXY       R2    R2ADJ
+#&gt; 1      8    3 -0.9985323 0.9970667 0.9941335 2.393617 2.040452 2.040452
+#&gt; 2      8    9 -0.9734830 0.9476691 0.9401933 2.528160 3.248520 3.248520
+#&gt; 3      8   10 -0.9358558 0.8758261 0.8603043 4.965369 3.554421 3.554421
+#&gt; 4      8   11 -0.9342510 0.8728249 0.8586943 2.462230 2.785279 2.785279
+#&gt; 5      8    8 -0.9355449 0.8752442 0.8544516 4.040865 2.458858 2.458858
+#&gt; 6      8    9 -0.9507649 0.9039538 0.8902329 3.705625 3.335703 3.335703
+#&gt;     AUCLST     AUCALL   AUCIFO    AUCIFOD    AUCPEO    AUCIFP  AUCIFPD   AUCPEP
+#&gt; 1 2.356267 0.09425069 2.357837 0.09431348 13.403196 13.460844 20.65564 20.64189
+#&gt; 2 3.513175 0.14052701 3.495827 0.13983307  7.533221  7.074344 16.21809 16.29857
+#&gt; 3 3.744043 0.14976171 3.649167 0.14596668  5.064624  2.596369 25.65866 26.32577
+#&gt; 4 2.938974 0.11755898 2.855452 0.11421808  5.229568  2.457520 18.34071 18.87718
+#&gt; 5 2.696249 0.10784996 2.654988 0.10619954  8.804484  7.387236 28.23768 28.67652
+#&gt; 6 3.590285 0.14361141 3.494796 0.13979183  7.090860  4.552269 20.94411 21.51637
 #&gt;    AUMCLST  AUMCIFO  AUMCPEO  AUMCIFP  AUMCPEP MRTIVLST MRTIVIFO MRTIVIFP
-#&gt; 1 3.271250 7.792554 58.02083 7.815026 58.14153 1.603199 3.307161 3.314490
-#&gt; 2 6.398750 9.391522 31.86674 9.195343 30.41314 1.969743 2.673229 2.630377
-#&gt; 3 5.006250 6.972678 28.20191 5.988790 16.40632 1.408457 1.862339 1.641139
-#&gt; 4 4.381875 5.948903 26.34146 5.097338 14.03601 1.573227 2.024142 1.785125
-#&gt; 5 3.707500 6.545866 43.36120 6.052534 38.74467 1.507814 2.427768 2.279684
-#&gt; 6 5.532500 8.289291 33.25726 7.255264 23.74502 1.658571 2.308811 2.076019
+#&gt; 1 3.271250 7.792554 7.815026 58.02083 58.14153 1.603199 3.307161 3.314490
+#&gt; 2 6.398750 9.391522 9.195343 31.86674 30.41314 1.969743 2.673229 2.630377
+#&gt; 3 5.006250 6.972678 5.988790 28.20191 16.40632 1.408457 1.862339 1.641139
+#&gt; 4 4.381875 5.948903 5.097338 26.34146 14.03601 1.573227 2.024142 1.785125
+#&gt; 5 3.707500 6.545866 6.052534 43.36120 38.74467 1.507814 2.427768 2.279684
+#&gt; 6 5.532500 8.289291 7.255264 33.25726 23.74502 1.658571 2.308811 2.076019
 #&gt;        VZO      VZP       CLO       CLP     VSSO     VSSP AUC[0-12h] AUC[0-24h]
 #&gt; 1 67.01598 66.97136 10.610002 10.602939 35.08898 35.14333   2.188947   2.331634
 #&gt; 2 23.54132 23.65814  7.116070  7.151384 19.02289 18.81084   3.429231   3.507581
@@ -315,316 +336,168 @@ NCA	     to perform NCA for many subjects.
 <span class='fu'>writeLines</span>(<span class='fu'><a href='NCA.html'>NCA</a></span>(<span class='no'>Indometh</span>, <span class='st'>"Subject"</span>, <span class='st'>"time"</span>, <span class='st'>"conc"</span>, <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>, <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Infusion"</span>, <span class='kw'>dur</span><span class='kw'>=</span><span class='fl'>0.25</span>,
            <span class='kw'>fit</span><span class='kw'>=</span><span class='st'>"Log"</span>, <span class='kw'>report</span><span class='kw'>=</span><span class='st'>"Text"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>), <span class='st'>"Indometh_Infusion_Log_CoreOutput.txt"</span>)
 
-<span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"Time"</span>], <span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;         CMAX        CMAXD         TMAX         TLAG         CLST        CLSTP 
-#&gt;   10.5000000    0.0328125    1.1200000    0.0000000    3.2800000    3.2801465 
-#&gt;         TLST       LAMZHL         LAMZ       LAMZLL       LAMZUL      LAMZNPT 
-#&gt;   24.3700000   14.3043776    0.0484570    9.0500000   24.3700000    3.0000000 
-#&gt;       CORRXY           R2        R2ADJ       AUCLST       AUCALL       AUCIFO 
-#&gt;   -0.9999999    0.9999997    0.9999995  148.9230500  148.9230500  216.6119330 
-#&gt;      AUCIFOD       AUCPEO       AUCIFP      AUCIFPD       AUCPEP      AUMCLST 
-#&gt;    0.6769123   31.2489169  216.6149558    0.6769217   31.2498763 1459.0711035 
-#&gt;      AUMCIFO      AUMCPEO      AUMCIFP      AUMCPEP     MRTEVLST     MRTEVIFO 
-#&gt; 4505.5348194   67.6160287 4505.6708646   67.6170065    9.7974834   20.8000305 
-#&gt;     MRTEVIFP         VZFO         VZFP         CLFO         CLFP 
-#&gt;   20.8003683   30.4867482   30.4863228    1.4772963    1.4772757 </div><div class='input'><span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
-        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;        CMAX       CMAXD        TMAX          C0     AUCPBEO     AUCPBEP 
-#&gt;  1.50000000  0.06000000  0.25000000  2.39361702 20.65564214 20.64189142 
-#&gt;        CLST       CLSTP        TLST      LAMZHL        LAMZ      LAMZLL 
-#&gt;  0.05000000  0.05024851  8.00000000  4.37812701  0.15832048  5.00000000 
-#&gt;      LAMZUL     LAMZNPT      CORRXY          R2       R2ADJ      AUCLST 
-#&gt;  8.00000000  3.00000000 -0.99853229  0.99706673  0.99413345  2.04045213 
-#&gt;      AUCALL      AUCIFO     AUCIFOD      AUCPEO      AUCIFP     AUCIFPD 
-#&gt;  2.04045213  2.35626723  0.09425069 13.40319561  2.35783688  0.09431348 
-#&gt;      AUCPEP     AUMCLST     AUMCIFO     AUMCPEO     AUMCIFP     AUMCPEP 
-#&gt; 13.46084419  3.27125000  7.79255448 58.02082606  7.81502594 58.14153371 
-#&gt;    MRTIVLST    MRTIVIFO    MRTIVIFP         VZO         VZP         CLO 
-#&gt;  1.60319860  3.30716074  3.31448966 67.01597804 66.97136466 10.61000197 
-#&gt;         CLP        VSSO        VSSP 
-#&gt; 10.60293876 35.08898193 35.14333088 </div><div class='input'><span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
-        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Infusion"</span>, <span class='kw'>dur</span><span class='kw'>=</span><span class='fl'>0.25</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;        CMAX       CMAXD        TMAX        CLST        TLST       CLSTP 
-#&gt;  1.50000000  0.06000000  0.25000000  0.05000000  8.00000000  0.05024851 
-#&gt;      LAMZHL        LAMZ      LAMZLL      LAMZUL     LAMZNPT      CORRXY 
-#&gt;  4.37812701  0.15832048  5.00000000  8.00000000  3.00000000 -0.99853229 
-#&gt;          R2       R2ADJ      AUCLST      AUCALL      AUCIFO     AUCIFOD 
-#&gt;  0.99706673  0.99413345  1.74125000  1.74125000  2.05706511  0.08228260 
-#&gt;      AUCPEO      AUCIFP     AUCIFPD      AUCPEP     AUMCLST     AUMCIFO 
-#&gt; 15.35270349  2.05863475  0.08234539 15.41724428  3.27125000  7.79255448 
-#&gt;     AUMCPEO     AUMCIFP     AUMCPEP    MRTIVLST    MRTIVIFO    MRTIVIFP 
-#&gt; 58.02082606  7.81502594 58.14153371  1.75367911  3.66319049  3.67121783 
-#&gt;         VZO         VZP         CLO         CLP        VSSO        VSSP 
-#&gt; 76.76351746 76.70498779 12.15323712 12.14397067 44.51962266 44.58316170 </div><div class='input'>
-<span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"Time"</span>], <span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>,
-        <span class='kw'>report</span><span class='kw'>=</span><span class='st'>"Text"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;  [1] "                        NONCOMPARTMENTAL ANALYSIS REPORT"                           
-#&gt;  [2] "                       Package version 0.1.1 (2017-07-10)"                          
-#&gt;  [3] "                          R version 3.4.2 (2017-09-28)"                             
-#&gt;  [4] ""                                                                                   
-#&gt;  [5] "Date and Time: 2017-10-20 10:38:08 Asia/Seoul"                                      
-#&gt;  [6] ""                                                                                   
-#&gt;  [7] "Calculation Setting"                                                                
-#&gt;  [8] "-------------------"                                                                
-#&gt;  [9] "Drug Administration: Extravascular"                                                 
-#&gt; [10] "Observation count excluding trailing zero: 11"                                      
-#&gt; [11] "dose at time 0: 320"                                                                
-#&gt; [12] "AUC Calculation Method: Linear-up Linear-down fit"                                  
-#&gt; [13] "Weighting for lambda z: Uniform (Ordinary Least Square, OLS)"                       
-#&gt; [14] "Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4"
-#&gt; [15] ""                                                                                   
-#&gt; [16] ""                                                                                   
-#&gt; [17] "Fitting, AUC, AUMC Result"                                                          
-#&gt; [18] "-------------------------"                                                          
-#&gt; [19] "      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight"    
-#&gt; [20] "-------------------------------------------------------------------------------"    
-#&gt; [21] "     0.0000       0.7400                           0.0000     0.0000 "              
-#&gt; [22] "     0.2500       2.8400                           0.4475     0.0888 "              
-#&gt; [23] "     0.5700       6.5700                           1.9531     0.8015 "              
-#&gt; [24] "     1.1200      10.5000                           6.6474     5.0654 "              
-#&gt; [25] "     2.0200       9.6600                          15.7194    19.1383 "              
-#&gt; [26] "     3.8200       8.5800                          32.1354    66.1982 "              
-#&gt; [27] "     5.1000       8.3600                          42.9769   114.4617 "              
-#&gt; [28] "     7.0300       7.4700                          58.2529   206.2815 "              
-#&gt; [29] "     9.0500 *     6.8900     6.8912 -1.228e-03    72.7565   322.2988     1.0000"    
-#&gt; [30] "    12.1200 *     5.9400     5.9387 +1.324e-03    92.4505   528.5219     1.0000"    
-#&gt; [31] "    24.3700 *     3.2800     3.2801 -1.465e-04   148.9231  1459.0711     1.0000"    
-#&gt; [32] ""                                                                                   
-#&gt; [33] "*: Used for the calculation of Lambda z."                                           
-#&gt; [34] ""                                                                                   
-#&gt; [35] ""                                                                                   
-#&gt; [36] "Calculated Values"                                                                  
-#&gt; [37] "-----------------"                                                                  
-#&gt; [38] "CMAX       Max Conc                                       10.5000 mg/L"             
-#&gt; [39] "CMAXD      Max Conc Norm by Dose                           0.0328 mg/L/mg"          
-#&gt; [40] "TMAX       Time of CMAX                                    1.1200 h"                
-#&gt; [41] "TLAG       Time Until First Nonzero Conc                   0.0000 h"                
-#&gt; [42] "CLST       Last Nonzero Conc                               3.2800 mg/L"             
-#&gt; [43] "CLSTP      Last Nonzero Conc Pred                          3.2801 mg/L"             
-#&gt; [44] "TLST       Time of Last Nonzero Conc                      24.3700 h"                
-#&gt; [45] "LAMZHL     Half-Life Lambda z                             14.3044 h"                
-#&gt; [46] "LAMZ       Lambda z                                        0.0485 /h"               
-#&gt; [47] "LAMZLL     Lambda z Lower Limit                            9.0500 h"                
-#&gt; [48] "LAMZUL     Lambda z Upper Limit                           24.3700 h"                
-#&gt; [49] "LAMZNPT    Number of Points for Lambda z                   3"                       
-#&gt; [50] "CORRXY     Correlation Between TimeX and Log ConcY        -1.0000 "                 
-#&gt; [51] "R2         R Squared                                       1.0000 "                 
-#&gt; [52] "R2ADJ      R Squared Adjusted                              1.0000 "                 
-#&gt; [53] "AUCLST     AUC to Last Nonzero Conc                      148.9231 h*mg/L"           
-#&gt; [54] "AUCALL     AUC All                                       148.9231 h*mg/L"           
-#&gt; [55] "AUCIFO     AUC Infinity Obs                              216.6119 h*mg/L"           
-#&gt; [56] "AUCIFOD    AUC Infinity Obs Norm by Dose                   0.6769 h*mg/L/mg"        
-#&gt; [57] "AUCPEO     AUC %Extrapolation Obs                         31.2489 %"                
-#&gt; [58] "AUCIFP     AUC Infinity Pred                             216.6150 h*mg/L"           
-#&gt; [59] "AUCIFPD    AUC Infinity Pred Norm by Dose                  0.6769 h*mg/L/mg"        
-#&gt; [60] "AUCPEP     AUC %Extrapolation Pred                        31.2499 %"                
-#&gt; [61] "AUMCLST    AUMC to Last Nonzero Conc                    1459.0711 h2*mg/L"          
-#&gt; [62] "AUMCIFO    AUMC Infinity Obs                            4505.5348 h2*mg/L"          
-#&gt; [63] "AUMCPEO    AUMC %Extrapolation Obs                        67.6160 %"                
-#&gt; [64] "AUMCIFP    AUMC Infinity Pred                           4505.6709 h2*mg/L"          
-#&gt; [65] "AUMCPEP    AUMC % Extrapolation Pred                      67.6170 %"                
-#&gt; [66] "MRTEVLST   MRT Extravasc to Last Nonzero Conc              9.7975 h"                
-#&gt; [67] "MRTEVIFO   MRT Extravasc Infinity Obs                     20.8000 h"                
-#&gt; [68] "MRTEVIFP   MRT Extravasc Infinity Pred                    20.8004 h"                
-#&gt; [69] "VZFO       Vz Obs by F                                    30.4867 L"                
-#&gt; [70] "VZFP       Vz Pred by F                                   30.4863 L"                
-#&gt; [71] "CLFO       Total CL Obs by F                               1.4773 L/h"              
-#&gt; [72] "CLFP       Total CL Pred by F                              1.4773 L/h"              </div><div class='input'><span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
-        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>report</span><span class='kw'>=</span><span class='st'>"Text"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;  [1] "                        NONCOMPARTMENTAL ANALYSIS REPORT"                           
-#&gt;  [2] "                       Package version 0.1.1 (2017-07-10)"                          
-#&gt;  [3] "                          R version 3.4.2 (2017-09-28)"                             
-#&gt;  [4] ""                                                                                   
-#&gt;  [5] "Date and Time: 2017-10-20 10:38:08 Asia/Seoul"                                      
-#&gt;  [6] ""                                                                                   
-#&gt;  [7] "Calculation Setting"                                                                
-#&gt;  [8] "-------------------"                                                                
-#&gt;  [9] "Drug Administration: Bolus IV"                                                      
-#&gt; [10] "Observation count excluding trailing zero: 11"                                      
-#&gt; [11] "dose at time 0: 25"                                                                 
-#&gt; [12] "AUC Calculation Method: Linear-up Linear-down fit"                                  
-#&gt; [13] "Weighting for lambda z: Uniform (Ordinary Least Square, OLS)"                       
-#&gt; [14] "Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4"
-#&gt; [15] ""                                                                                   
-#&gt; [16] ""                                                                                   
-#&gt; [17] "Fitting, AUC, AUMC Result"                                                          
-#&gt; [18] "-------------------------"                                                          
-#&gt; [19] "      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight"    
-#&gt; [20] "-------------------------------------------------------------------------------"    
-#&gt; [21] "     0.0000 +     2.3936                           0.0000     0.0000 "              
-#&gt; [22] "     0.2500       1.5000                           0.4867     0.0469 "              
-#&gt; [23] "     0.5000       0.9400                           0.7917     0.1525 "              
-#&gt; [24] "     0.7500       0.7800                           1.0067     0.2844 "              
-#&gt; [25] "     1.0000       0.4800                           1.1642     0.4175 "              
-#&gt; [26] "     1.2500       0.3700                           1.2705     0.5353 "              
-#&gt; [27] "     2.0000       0.1900                           1.4805     0.8513 "              
-#&gt; [28] "     3.0000       0.1200                           1.6355     1.2213 "              
-#&gt; [29] "     4.0000       0.1100                           1.7505     1.6213 "              
-#&gt; [30] "     5.0000 *     0.0800     0.0808 -7.972e-04     1.8455     2.0413     1.0000"    
-#&gt; [31] "     6.0000 *     0.0700     0.0690 +1.033e-03     1.9205     2.4513     1.0000"    
-#&gt; [32] "     8.0000 *     0.0500     0.0502 -2.485e-04     2.0405     3.2713     1.0000"    
-#&gt; [33] ""                                                                                   
-#&gt; [34] "+: Back extrapolated concentration"                                                 
-#&gt; [35] "*: Used for the calculation of Lambda z."                                           
-#&gt; [36] ""                                                                                   
-#&gt; [37] ""                                                                                   
-#&gt; [38] "Calculated Values"                                                                  
-#&gt; [39] "-----------------"                                                                  
-#&gt; [40] "CMAX       Max Conc                                        1.5000 mg/L"             
-#&gt; [41] "CMAXD      Max Conc Norm by Dose                           0.0600 mg/L/mg"          
-#&gt; [42] "TMAX       Time of CMAX                                    0.2500 h"                
-#&gt; [43] "C0         Initial Conc                                    2.3936 mg/L"             
-#&gt; [44] "AUCPBEO    AUC %Back Extrapolation Obs                    20.6556 %"                
-#&gt; [45] "AUCPBEP    AUC %Back Extrapolation Pred                   20.6419 %"                
-#&gt; [46] "CLST       Last Nonzero Conc                               0.0500 mg/L"             
-#&gt; [47] "CLSTP      Last Nonzero Conc Pred                          0.0502 mg/L"             
-#&gt; [48] "TLST       Time of Last Nonzero Conc                       8.0000 h"                
-#&gt; [49] "LAMZHL     Half-Life Lambda z                              4.3781 h"                
-#&gt; [50] "LAMZ       Lambda z                                        0.1583 /h"               
-#&gt; [51] "LAMZLL     Lambda z Lower Limit                            5.0000 h"                
-#&gt; [52] "LAMZUL     Lambda z Upper Limit                            8.0000 h"                
-#&gt; [53] "LAMZNPT    Number of Points for Lambda z                   3"                       
-#&gt; [54] "CORRXY     Correlation Between TimeX and Log ConcY        -0.9985 "                 
-#&gt; [55] "R2         R Squared                                       0.9971 "                 
-#&gt; [56] "R2ADJ      R Squared Adjusted                              0.9941 "                 
-#&gt; [57] "AUCLST     AUC to Last Nonzero Conc                        2.0405 h*mg/L"           
-#&gt; [58] "AUCALL     AUC All                                         2.0405 h*mg/L"           
-#&gt; [59] "AUCIFO     AUC Infinity Obs                                2.3563 h*mg/L"           
-#&gt; [60] "AUCIFOD    AUC Infinity Obs Norm by Dose                   0.0943 h*mg/L/mg"        
-#&gt; [61] "AUCPEO     AUC %Extrapolation Obs                         13.4032 %"                
-#&gt; [62] "AUCIFP     AUC Infinity Pred                               2.3578 h*mg/L"           
-#&gt; [63] "AUCIFPD    AUC Infinity Pred Norm by Dose                  0.0943 h*mg/L/mg"        
-#&gt; [64] "AUCPEP     AUC %Extrapolation Pred                        13.4608 %"                
-#&gt; [65] "AUMCLST    AUMC to Last Nonzero Conc                       3.2713 h2*mg/L"          
-#&gt; [66] "AUMCIFO    AUMC Infinity Obs                               7.7926 h2*mg/L"          
-#&gt; [67] "AUMCPEO    AUMC %Extrapolation Obs                        58.0208 %"                
-#&gt; [68] "AUMCIFP    AUMC Infinity Pred                              7.8150 h2*mg/L"          
-#&gt; [69] "AUMCPEP    AUMC % Extrapolation Pred                      58.1415 %"                
-#&gt; [70] "MRTIVLST   MRT Intravasc to Last Nonzero Conc              1.6032 h"                
-#&gt; [71] "MRTIVIFO   MRT Intravasc Infinity Obs                      3.3072 h"                
-#&gt; [72] "MRTIVIFP   MRT Intravasc Infinity Pred                     3.3145 h"                
-#&gt; [73] "VZO        Vz Obs                                         67.0160 L"                
-#&gt; [74] "VZP        Vz Pred                                        66.9714 L"                
-#&gt; [75] "CLO        Total CL Obs                                   10.6100 L/h"              
-#&gt; [76] "CLP        Total CL Pred                                  10.6029 L/h"              
-#&gt; [77] "VSSO       Vol Dist Steady State Obs                      35.0890 L"                
-#&gt; [78] "VSSP       Vol Dist Steady State Pred                     35.1433 L"                </div><div class='input'><span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
-        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Infusion"</span>, <span class='kw'>dur</span><span class='kw'>=</span><span class='fl'>0.25</span>, <span class='kw'>report</span><span class='kw'>=</span><span class='st'>"Text"</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;  [1] "                        NONCOMPARTMENTAL ANALYSIS REPORT"                           
-#&gt;  [2] "                       Package version 0.1.1 (2017-07-10)"                          
-#&gt;  [3] "                          R version 3.4.2 (2017-09-28)"                             
-#&gt;  [4] ""                                                                                   
-#&gt;  [5] "Date and Time: 2017-10-20 10:38:08 Asia/Seoul"                                      
-#&gt;  [6] ""                                                                                   
-#&gt;  [7] "Calculation Setting"                                                                
-#&gt;  [8] "-------------------"                                                                
-#&gt;  [9] "Drug Administration: Constant Infusion"                                             
-#&gt; [10] "Observation count excluding trailing zero: 11"                                      
-#&gt; [11] "dose at time 0: 25"                                                                 
-#&gt; [12] "Length of Infusion: 0.25"                                                           
-#&gt; [13] "AUC Calculation Method: Linear-up Linear-down fit"                                  
-#&gt; [14] "Weighting for lambda z: Uniform (Ordinary Least Square, OLS)"                       
-#&gt; [15] "Lambda z selection criterion: Heighest adjusted R-squared value with precision=1e-4"
-#&gt; [16] ""                                                                                   
-#&gt; [17] ""                                                                                   
-#&gt; [18] "Fitting, AUC, AUMC Result"                                                          
-#&gt; [19] "-------------------------"                                                          
-#&gt; [20] "      Time         Conc.      Pred.   Residual       AUC       AUMC      Weight"    
-#&gt; [21] "-------------------------------------------------------------------------------"    
-#&gt; [22] "     0.0000 +     0.0000                           0.0000     0.0000 "              
-#&gt; [23] "     0.2500       1.5000                           0.1875     0.0469 "              
-#&gt; [24] "     0.5000       0.9400                           0.4925     0.1525 "              
-#&gt; [25] "     0.7500       0.7800                           0.7075     0.2844 "              
-#&gt; [26] "     1.0000       0.4800                           0.8650     0.4175 "              
-#&gt; [27] "     1.2500       0.3700                           0.9713     0.5353 "              
-#&gt; [28] "     2.0000       0.1900                           1.1813     0.8513 "              
-#&gt; [29] "     3.0000       0.1200                           1.3363     1.2213 "              
-#&gt; [30] "     4.0000       0.1100                           1.4513     1.6213 "              
-#&gt; [31] "     5.0000 *     0.0800     0.0808 -7.972e-04     1.5462     2.0413     1.0000"    
-#&gt; [32] "     6.0000 *     0.0700     0.0690 +1.033e-03     1.6213     2.4513     1.0000"    
-#&gt; [33] "     8.0000 *     0.0500     0.0502 -2.485e-04     1.7413     3.2713     1.0000"    
-#&gt; [34] ""                                                                                   
-#&gt; [35] "+: Back extrapolated concentration"                                                 
-#&gt; [36] "*: Used for the calculation of Lambda z."                                           
-#&gt; [37] ""                                                                                   
-#&gt; [38] ""                                                                                   
-#&gt; [39] "Calculated Values"                                                                  
-#&gt; [40] "-----------------"                                                                  
-#&gt; [41] "CMAX       Max Conc                                        1.5000 mg/L"             
-#&gt; [42] "CMAXD      Max Conc Norm by Dose                           0.0600 mg/L/mg"          
-#&gt; [43] "TMAX       Time of CMAX                                    0.2500 h"                
-#&gt; [44] "CLST       Last Nonzero Conc                               0.0500 mg/L"             
-#&gt; [45] "TLST       Time of Last Nonzero Conc                       8.0000 h"                
-#&gt; [46] "CLSTP      Last Nonzero Conc Pred                          0.0502 mg/L"             
-#&gt; [47] "LAMZHL     Half-Life Lambda z                              4.3781 h"                
-#&gt; [48] "LAMZ       Lambda z                                        0.1583 /h"               
-#&gt; [49] "LAMZLL     Lambda z Lower Limit                            5.0000 h"                
-#&gt; [50] "LAMZUL     Lambda z Upper Limit                            8.0000 h"                
-#&gt; [51] "LAMZNPT    Number of Points for Lambda z                   3"                       
-#&gt; [52] "CORRXY     Correlation Between TimeX and Log ConcY        -0.9985 "                 
-#&gt; [53] "R2         R Squared                                       0.9971 "                 
-#&gt; [54] "R2ADJ      R Squared Adjusted                              0.9941 "                 
-#&gt; [55] "AUCLST     AUC to Last Nonzero Conc                        1.7413 h*mg/L"           
-#&gt; [56] "AUCALL     AUC All                                         1.7413 h*mg/L"           
-#&gt; [57] "AUCIFO     AUC Infinity Obs                                2.0571 h*mg/L"           
-#&gt; [58] "AUCIFOD    AUC Infinity Obs Norm by Dose                   0.0823 h*mg/L/mg"        
-#&gt; [59] "AUCPEO     AUC %Extrapolation Obs                         15.3527 %"                
-#&gt; [60] "AUCIFP     AUC Infinity Pred                               2.0586 h*mg/L"           
-#&gt; [61] "AUCIFPD    AUC Infinity Pred Norm by Dose                  0.0823 h*mg/L/mg"        
-#&gt; [62] "AUCPEP     AUC %Extrapolation Pred                        15.4172 %"                
-#&gt; [63] "AUMCLST    AUMC to Last Nonzero Conc                       3.2713 h2*mg/L"          
-#&gt; [64] "AUMCIFO    AUMC Infinity Obs                               7.7926 h2*mg/L"          
-#&gt; [65] "AUMCPEO    AUMC %Extrapolation Obs                        58.0208 %"                
-#&gt; [66] "AUMCIFP    AUMC Infinity Pred                              7.8150 h2*mg/L"          
-#&gt; [67] "AUMCPEP    AUMC % Extrapolation Pred                      58.1415 %"                
-#&gt; [68] "MRTIVLST   MRT Intravasc to Last Nonzero Conc              1.7537 h"                
-#&gt; [69] "MRTIVIFO   MRT Intravasc Infinity Obs                      3.6632 h"                
-#&gt; [70] "MRTIVIFP   MRT Intravasc Infinity Pred                     3.6712 h"                
-#&gt; [71] "VZO        Vz Obs                                         76.7635 L"                
-#&gt; [72] "VZP        Vz Pred                                        76.7050 L"                
-#&gt; [73] "CLO        Total CL Obs                                   12.1532 L/h"              
-#&gt; [74] "CLP        Total CL Pred                                  12.1440 L/h"              
-#&gt; [75] "VSSO       Vol Dist Steady State Obs                      44.5196 L"                
-#&gt; [76] "VSSP       Vol Dist Steady State Pred                     44.5832 L"                </div><div class='input'>
+<span class='fu'><a href='sNCA.html'>sNCA</a></span>(<span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"Time"</span>], <span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>, <span class='kw'>concUnit</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;           b0         CMAX        CMAXD         TMAX         TLAG         CLST 
+#&gt;    2.3687851   10.5000000    0.0328125    1.1200000    0.0000000    3.2800000 
+#&gt;        CLSTP         TLST       LAMZHL         LAMZ       LAMZLL       LAMZUL 
+#&gt;    3.2801465   24.3700000   14.3043776    0.0484570    9.0500000   24.3700000 
+#&gt;      LAMZNPT       CORRXY           R2        R2ADJ           C0       AUCLST 
+#&gt;    3.0000000   -0.9999999    0.9999997    0.9999995           NA  148.9230500 
+#&gt;       AUCALL       AUCIFO      AUCIFOD       AUCIFP      AUCIFPD       AUCPEO 
+#&gt;  148.9230500  216.6119330    0.6769123  216.6149558    0.6769217   31.2489169 
+#&gt;       AUCPEP      AUCPBEO      AUCPBEP      AUMCLST      AUMCIFO      AUMCIFP 
+#&gt;   31.2498763           NA           NA 1459.0711035 4505.5348194 4505.6708646 
+#&gt;      AUMCPEO      AUMCPEP     MRTIVLST     MRTIVIFO     MRTIVIFP     MRTEVLST 
+#&gt;   67.6160287   67.6170065           NA           NA           NA    9.7974834 
+#&gt;     MRTEVIFO     MRTEVIFP          VZO          VZP         VZFO         VZFP 
+#&gt;   20.8000305   20.8003683           NA           NA   30.4867482   30.4863228 
+#&gt;          CLO          CLP         CLFO         CLFP         VSSO         VSSP 
+#&gt;           NA           NA    1.4772963    1.4772757           NA           NA 
+#&gt; attr(,"units")
+#&gt;  [1] ""          "mg/L"      "mg/L/mg"   "h"         "h"         "mg/L"     
+#&gt;  [7] "mg/L"      "h"         "h"         "/h"        "h"         "h"        
+#&gt; [13] ""          ""          ""          ""          "mg/L"      "h*mg/L"   
+#&gt; [19] "h*mg/L"    "h*mg/L"    "h*mg/L/mg" "h*mg/L"    "h*mg/L/mg" "%"        
+#&gt; [25] "%"         "%"         "%"         "h2*mg/L"   "h2*mg/L"   "h2*mg/L"  
+#&gt; [31] "%"         "%"         "h"         "h"         "h"         "h"        
+#&gt; [37] "h"         "h"         "L"         "L"         "L"         "L"        
+#&gt; [43] "L/h"       "L/h"       "L/h"       "L/h"       "L"         "L"        </div><div class='input'><span class='fu'><a href='sNCA.html'>sNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
+        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>concUnit</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;          b0        CMAX       CMAXD        TMAX        TLAG        CLST 
+#&gt; -1.72421060  1.50000000  0.06000000  0.25000000          NA  0.05000000 
+#&gt;       CLSTP        TLST      LAMZHL        LAMZ      LAMZLL      LAMZUL 
+#&gt;  0.05024851  8.00000000  4.37812701  0.15832048  5.00000000  8.00000000 
+#&gt;     LAMZNPT      CORRXY          R2       R2ADJ          C0      AUCLST 
+#&gt;  3.00000000 -0.99853229  0.99706673  0.99413345  2.39361702  2.04045213 
+#&gt;      AUCALL      AUCIFO     AUCIFOD      AUCIFP     AUCIFPD      AUCPEO 
+#&gt;  2.04045213  2.35626723  0.09425069  2.35783688  0.09431348 13.40319561 
+#&gt;      AUCPEP     AUCPBEO     AUCPBEP     AUMCLST     AUMCIFO     AUMCIFP 
+#&gt; 13.46084419 20.65564214 20.64189142  3.27125000  7.79255448  7.81502594 
+#&gt;     AUMCPEO     AUMCPEP    MRTIVLST    MRTIVIFO    MRTIVIFP    MRTEVLST 
+#&gt; 58.02082606 58.14153371  1.60319860  3.30716074  3.31448966          NA 
+#&gt;    MRTEVIFO    MRTEVIFP         VZO         VZP        VZFO        VZFP 
+#&gt;          NA          NA 67.01597804 66.97136466          NA          NA 
+#&gt;         CLO         CLP        CLFO        CLFP        VSSO        VSSP 
+#&gt; 10.61000197 10.60293876          NA          NA 35.08898193 35.14333088 
+#&gt; attr(,"units")
+#&gt;  [1] ""          "mg/L"      "mg/L/mg"   "h"         "h"         "mg/L"     
+#&gt;  [7] "mg/L"      "h"         "h"         "/h"        "h"         "h"        
+#&gt; [13] ""          ""          ""          ""          "mg/L"      "h*mg/L"   
+#&gt; [19] "h*mg/L"    "h*mg/L"    "h*mg/L/mg" "h*mg/L"    "h*mg/L/mg" "%"        
+#&gt; [25] "%"         "%"         "%"         "h2*mg/L"   "h2*mg/L"   "h2*mg/L"  
+#&gt; [31] "%"         "%"         "h"         "h"         "h"         "h"        
+#&gt; [37] "h"         "h"         "L"         "L"         "L"         "L"        
+#&gt; [43] "L/h"       "L/h"       "L/h"       "L/h"       "L"         "L"        </div><div class='input'><span class='fu'><a href='sNCA.html'>sNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
+        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Infusion"</span>, <span class='kw'>dur</span><span class='kw'>=</span><span class='fl'>0.25</span>, <span class='kw'>concUnit</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;          b0        CMAX       CMAXD        TMAX        TLAG        CLST 
+#&gt; -1.72421060  1.50000000  0.06000000  0.25000000  0.00000000  0.05000000 
+#&gt;       CLSTP        TLST      LAMZHL        LAMZ      LAMZLL      LAMZUL 
+#&gt;  0.05024851  8.00000000  4.37812701  0.15832048  5.00000000  8.00000000 
+#&gt;     LAMZNPT      CORRXY          R2       R2ADJ          C0      AUCLST 
+#&gt;  3.00000000 -0.99853229  0.99706673  0.99413345          NA  1.74125000 
+#&gt;      AUCALL      AUCIFO     AUCIFOD      AUCIFP     AUCIFPD      AUCPEO 
+#&gt;  1.74125000  2.05706511  0.08228260  2.05863475  0.08234539 15.35270349 
+#&gt;      AUCPEP     AUCPBEO     AUCPBEP     AUMCLST     AUMCIFO     AUMCIFP 
+#&gt; 15.41724428          NA          NA  3.27125000  7.79255448  7.81502594 
+#&gt;     AUMCPEO     AUMCPEP    MRTIVLST    MRTIVIFO    MRTIVIFP    MRTEVLST 
+#&gt; 58.02082606 58.14153371  1.75367911  3.66319049  3.67121783          NA 
+#&gt;    MRTEVIFO    MRTEVIFP         VZO         VZP        VZFO        VZFP 
+#&gt;          NA          NA 76.76351746 76.70498779          NA          NA 
+#&gt;         CLO         CLP        CLFO        CLFP        VSSO        VSSP 
+#&gt; 12.15323712 12.14397067          NA          NA 44.51962266 44.58316170 
+#&gt; attr(,"units")
+#&gt;  [1] ""          "mg/L"      "mg/L/mg"   "h"         "h"         "mg/L"     
+#&gt;  [7] "mg/L"      "h"         "h"         "/h"        "h"         "h"        
+#&gt; [13] ""          ""          ""          ""          "mg/L"      "h*mg/L"   
+#&gt; [19] "h*mg/L"    "h*mg/L"    "h*mg/L/mg" "h*mg/L"    "h*mg/L/mg" "%"        
+#&gt; [25] "%"         "%"         "%"         "h2*mg/L"   "h2*mg/L"   "h2*mg/L"  
+#&gt; [31] "%"         "%"         "h"         "h"         "h"         "h"        
+#&gt; [37] "h"         "h"         "L"         "L"         "L"         "L"        
+#&gt; [43] "L/h"       "L/h"       "L/h"       "L/h"       "L"         "L"        </div><div class='input'>
 <span class='no'>iAUC</span> <span class='kw'>=</span> <span class='fu'>data.frame</span>(<span class='kw'>Name</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"AUC[0-12h]"</span>,<span class='st'>"AUC[0-24h]"</span>), <span class='kw'>Start</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>0</span>), <span class='kw'>End</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='fl'>12</span>,<span class='fl'>24</span>)) ; <span class='no'>iAUC</span></div><div class='output co'>#&gt;         Name Start End
 #&gt; 1 AUC[0-12h]     0  12
-#&gt; 2 AUC[0-24h]     0  24</div><div class='input'><span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"Time"</span>], <span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>,
-        <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt;         CMAX        CMAXD         TMAX         TLAG         CLST        CLSTP 
-#&gt;   10.5000000    0.0328125    1.1200000    0.0000000    3.2800000    3.2801465 
-#&gt;         TLST       LAMZHL         LAMZ       LAMZLL       LAMZUL      LAMZNPT 
-#&gt;   24.3700000   14.3043776    0.0484570    9.0500000   24.3700000    3.0000000 
-#&gt;       CORRXY           R2        R2ADJ       AUCLST       AUCALL       AUCIFO 
-#&gt;   -0.9999999    0.9999997    0.9999995  148.9230500  148.9230500  216.6119330 
-#&gt;      AUCIFOD       AUCPEO       AUCIFP      AUCIFPD       AUCPEP      AUMCLST 
-#&gt;    0.6769123   31.2489169  216.6149558    0.6769217   31.2498763 1459.0711035 
-#&gt;      AUMCIFO      AUMCPEO      AUMCIFP      AUMCPEP     MRTEVLST     MRTEVIFO 
-#&gt; 4505.5348194   67.6160287 4505.6708646   67.6170065    9.7974834   20.8000305 
-#&gt;     MRTEVIFP         VZFO         VZFP         CLFO         CLFP   AUC[0-12h] 
-#&gt;   20.8003683   30.4867482   30.4863228    1.4772963    1.4772757   91.7355220 
-#&gt;   AUC[0-24h] 
-#&gt;  147.6945866 </div><div class='input'><span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
-        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt;        CMAX       CMAXD        TMAX          C0     AUCPBEO     AUCPBEP 
-#&gt;  1.50000000  0.06000000  0.25000000  2.39361702 20.65564214 20.64189142 
-#&gt;        CLST       CLSTP        TLST      LAMZHL        LAMZ      LAMZLL 
-#&gt;  0.05000000  0.05024851  8.00000000  4.37812701  0.15832048  5.00000000 
-#&gt;      LAMZUL     LAMZNPT      CORRXY          R2       R2ADJ      AUCLST 
-#&gt;  8.00000000  3.00000000 -0.99853229  0.99706673  0.99413345  2.04045213 
-#&gt;      AUCALL      AUCIFO     AUCIFOD      AUCPEO      AUCIFP     AUCIFPD 
-#&gt;  2.04045213  2.35626723  0.09425069 13.40319561  2.35783688  0.09431348 
-#&gt;      AUCPEP     AUMCLST     AUMCIFO     AUMCPEO     AUMCIFP     AUMCPEP 
-#&gt; 13.46084419  3.27125000  7.79255448 58.02082606  7.81502594 58.14153371 
-#&gt;    MRTIVLST    MRTIVIFO    MRTIVIFP         VZO         VZP         CLO 
-#&gt;  1.60319860  3.30716074  3.31448966 67.01597804 66.97136466 10.61000197 
-#&gt;         CLP        VSSO        VSSP  AUC[0-12h]  AUC[0-24h] 
-#&gt; 10.60293876 35.08898193 35.14333088  2.18894711  2.33163353 </div><div class='input'><span class='fu'><a href='IndiNCA.html'>IndiNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
-        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Infusion"</span>, <span class='kw'>dur</span><span class='kw'>=</span><span class='fl'>0.25</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>uConc</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt; <span class='warning'>Warning: length &gt; 1 ÀÌ¶ó´Â Á¶°ÇÀÌ ÀÖ°í, Ã¹¹øÂ° ¿ä¼Ò¸¸ÀÌ »ç¿ëµÉ °ÍÀÔ´Ï´Ù</span></div><div class='output co'>#&gt;        CMAX       CMAXD        TMAX        CLST        TLST       CLSTP 
-#&gt;  1.50000000  0.06000000  0.25000000  0.05000000  8.00000000  0.05024851 
-#&gt;      LAMZHL        LAMZ      LAMZLL      LAMZUL     LAMZNPT      CORRXY 
-#&gt;  4.37812701  0.15832048  5.00000000  8.00000000  3.00000000 -0.99853229 
-#&gt;          R2       R2ADJ      AUCLST      AUCALL      AUCIFO     AUCIFOD 
-#&gt;  0.99706673  0.99413345  1.74125000  1.74125000  2.05706511  0.08228260 
-#&gt;      AUCPEO      AUCIFP     AUCIFPD      AUCPEP     AUMCLST     AUMCIFO 
-#&gt; 15.35270349  2.05863475  0.08234539 15.41724428  3.27125000  7.79255448 
-#&gt;     AUMCPEO     AUMCIFP     AUMCPEP    MRTIVLST    MRTIVIFO    MRTIVIFP 
-#&gt; 58.02082606  7.81502594 58.14153371  1.75367911  3.66319049  3.67121783 
-#&gt;         VZO         VZP         CLO         CLP        VSSO        VSSP 
-#&gt; 76.76351746 76.70498779 12.15323712 12.14397067 44.51962266 44.58316170 
+#&gt; 2 AUC[0-24h]     0  24</div><div class='input'><span class='fu'><a href='sNCA.html'>sNCA</a></span>(<span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"Time"</span>], <span class='no'>Theoph</span>[<span class='no'>Theoph</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>320</span>,
+        <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>concUnit</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;           b0         CMAX        CMAXD         TMAX         TLAG         CLST 
+#&gt;    2.3687851   10.5000000    0.0328125    1.1200000    0.0000000    3.2800000 
+#&gt;        CLSTP         TLST       LAMZHL         LAMZ       LAMZLL       LAMZUL 
+#&gt;    3.2801465   24.3700000   14.3043776    0.0484570    9.0500000   24.3700000 
+#&gt;      LAMZNPT       CORRXY           R2        R2ADJ           C0       AUCLST 
+#&gt;    3.0000000   -0.9999999    0.9999997    0.9999995           NA  148.9230500 
+#&gt;       AUCALL       AUCIFO      AUCIFOD       AUCIFP      AUCIFPD       AUCPEO 
+#&gt;  148.9230500  216.6119330    0.6769123  216.6149558    0.6769217   31.2489169 
+#&gt;       AUCPEP      AUCPBEO      AUCPBEP      AUMCLST      AUMCIFO      AUMCIFP 
+#&gt;   31.2498763           NA           NA 1459.0711035 4505.5348194 4505.6708646 
+#&gt;      AUMCPEO      AUMCPEP     MRTIVLST     MRTIVIFO     MRTIVIFP     MRTEVLST 
+#&gt;   67.6160287   67.6170065           NA           NA           NA    9.7974834 
+#&gt;     MRTEVIFO     MRTEVIFP          VZO          VZP         VZFO         VZFP 
+#&gt;   20.8000305   20.8003683           NA           NA   30.4867482   30.4863228 
+#&gt;          CLO          CLP         CLFO         CLFP         VSSO         VSSP 
+#&gt;           NA           NA    1.4772963    1.4772757           NA           NA 
+#&gt;   AUC[0-12h]   AUC[0-24h] 
+#&gt;   91.7355220  147.6945866 
+#&gt; attr(,"units")
+#&gt;  [1] ""          "mg/L"      "mg/L/mg"   "h"         "h"         "mg/L"     
+#&gt;  [7] "mg/L"      "h"         "h"         "/h"        "h"         "h"        
+#&gt; [13] ""          ""          ""          ""          "mg/L"      "h*mg/L"   
+#&gt; [19] "h*mg/L"    "h*mg/L"    "h*mg/L/mg" "h*mg/L"    "h*mg/L/mg" "%"        
+#&gt; [25] "%"         "%"         "%"         "h2*mg/L"   "h2*mg/L"   "h2*mg/L"  
+#&gt; [31] "%"         "%"         "h"         "h"         "h"         "h"        
+#&gt; [37] "h"         "h"         "L"         "L"         "L"         "L"        
+#&gt; [43] "L/h"       "L/h"       "L/h"       "L/h"       "L"         "L"        
+#&gt; [49] "h*mg/L"    "h*mg/L"   </div><div class='input'><span class='fu'><a href='sNCA.html'>sNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
+        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Bolus"</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>concUnit</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;          b0        CMAX       CMAXD        TMAX        TLAG        CLST 
+#&gt; -1.72421060  1.50000000  0.06000000  0.25000000          NA  0.05000000 
+#&gt;       CLSTP        TLST      LAMZHL        LAMZ      LAMZLL      LAMZUL 
+#&gt;  0.05024851  8.00000000  4.37812701  0.15832048  5.00000000  8.00000000 
+#&gt;     LAMZNPT      CORRXY          R2       R2ADJ          C0      AUCLST 
+#&gt;  3.00000000 -0.99853229  0.99706673  0.99413345  2.39361702  2.04045213 
+#&gt;      AUCALL      AUCIFO     AUCIFOD      AUCIFP     AUCIFPD      AUCPEO 
+#&gt;  2.04045213  2.35626723  0.09425069  2.35783688  0.09431348 13.40319561 
+#&gt;      AUCPEP     AUCPBEO     AUCPBEP     AUMCLST     AUMCIFO     AUMCIFP 
+#&gt; 13.46084419 20.65564214 20.64189142  3.27125000  7.79255448  7.81502594 
+#&gt;     AUMCPEO     AUMCPEP    MRTIVLST    MRTIVIFO    MRTIVIFP    MRTEVLST 
+#&gt; 58.02082606 58.14153371  1.60319860  3.30716074  3.31448966          NA 
+#&gt;    MRTEVIFO    MRTEVIFP         VZO         VZP        VZFO        VZFP 
+#&gt;          NA          NA 67.01597804 66.97136466          NA          NA 
+#&gt;         CLO         CLP        CLFO        CLFP        VSSO        VSSP 
+#&gt; 10.61000197 10.60293876          NA          NA 35.08898193 35.14333088 
 #&gt;  AUC[0-12h]  AUC[0-24h] 
-#&gt;  1.88974498  2.03243140 </div></pre>
+#&gt;  2.18894711  2.33163353 
+#&gt; attr(,"units")
+#&gt;  [1] ""          "mg/L"      "mg/L/mg"   "h"         "h"         "mg/L"     
+#&gt;  [7] "mg/L"      "h"         "h"         "/h"        "h"         "h"        
+#&gt; [13] ""          ""          ""          ""          "mg/L"      "h*mg/L"   
+#&gt; [19] "h*mg/L"    "h*mg/L"    "h*mg/L/mg" "h*mg/L"    "h*mg/L/mg" "%"        
+#&gt; [25] "%"         "%"         "%"         "h2*mg/L"   "h2*mg/L"   "h2*mg/L"  
+#&gt; [31] "%"         "%"         "h"         "h"         "h"         "h"        
+#&gt; [37] "h"         "h"         "L"         "L"         "L"         "L"        
+#&gt; [43] "L/h"       "L/h"       "L/h"       "L/h"       "L"         "L"        
+#&gt; [49] "h*mg/L"    "h*mg/L"   </div><div class='input'><span class='fu'><a href='sNCA.html'>sNCA</a></span>(<span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>,<span class='st'>"time"</span>], <span class='no'>Indometh</span>[<span class='no'>Indometh</span>$<span class='no'>Subject</span><span class='kw'>==</span><span class='fl'>1</span>, <span class='st'>"conc"</span>], <span class='kw'>dose</span><span class='kw'>=</span><span class='fl'>25</span>,
+        <span class='kw'>adm</span><span class='kw'>=</span><span class='st'>"Infusion"</span>, <span class='kw'>dur</span><span class='kw'>=</span><span class='fl'>0.25</span>, <span class='kw'>iAUC</span><span class='kw'>=</span><span class='no'>iAUC</span>, <span class='kw'>concUnit</span><span class='kw'>=</span><span class='st'>"mg/L"</span>)</div><div class='output co'>#&gt;          b0        CMAX       CMAXD        TMAX        TLAG        CLST 
+#&gt; -1.72421060  1.50000000  0.06000000  0.25000000  0.00000000  0.05000000 
+#&gt;       CLSTP        TLST      LAMZHL        LAMZ      LAMZLL      LAMZUL 
+#&gt;  0.05024851  8.00000000  4.37812701  0.15832048  5.00000000  8.00000000 
+#&gt;     LAMZNPT      CORRXY          R2       R2ADJ          C0      AUCLST 
+#&gt;  3.00000000 -0.99853229  0.99706673  0.99413345          NA  1.74125000 
+#&gt;      AUCALL      AUCIFO     AUCIFOD      AUCIFP     AUCIFPD      AUCPEO 
+#&gt;  1.74125000  2.05706511  0.08228260  2.05863475  0.08234539 15.35270349 
+#&gt;      AUCPEP     AUCPBEO     AUCPBEP     AUMCLST     AUMCIFO     AUMCIFP 
+#&gt; 15.41724428          NA          NA  3.27125000  7.79255448  7.81502594 
+#&gt;     AUMCPEO     AUMCPEP    MRTIVLST    MRTIVIFO    MRTIVIFP    MRTEVLST 
+#&gt; 58.02082606 58.14153371  1.75367911  3.66319049  3.67121783          NA 
+#&gt;    MRTEVIFO    MRTEVIFP         VZO         VZP        VZFO        VZFP 
+#&gt;          NA          NA 76.76351746 76.70498779          NA          NA 
+#&gt;         CLO         CLP        CLFO        CLFP        VSSO        VSSP 
+#&gt; 12.15323712 12.14397067          NA          NA 44.51962266 44.58316170 
+#&gt;  AUC[0-12h]  AUC[0-24h] 
+#&gt;  1.88974498  2.03243140 
+#&gt; attr(,"units")
+#&gt;  [1] ""          "mg/L"      "mg/L/mg"   "h"         "h"         "mg/L"     
+#&gt;  [7] "mg/L"      "h"         "h"         "/h"        "h"         "h"        
+#&gt; [13] ""          ""          ""          ""          "mg/L"      "h*mg/L"   
+#&gt; [19] "h*mg/L"    "h*mg/L"    "h*mg/L/mg" "h*mg/L"    "h*mg/L/mg" "%"        
+#&gt; [25] "%"         "%"         "%"         "h2*mg/L"   "h2*mg/L"   "h2*mg/L"  
+#&gt; [31] "%"         "%"         "h"         "h"         "h"         "h"        
+#&gt; [37] "h"         "h"         "L"         "L"         "L"         "L"        
+#&gt; [43] "L/h"       "L/h"       "L/h"       "L/h"       "L"         "L"        
+#&gt; [49] "h*mg/L"    "h*mg/L"   </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -650,11 +523,14 @@ Kyun-Seop Bae &lt;k@acr.kr&gt;, Jee Eun Lee &lt;JeeEun.Lee@fda.hhs.gov&gt;
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

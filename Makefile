@@ -1,2 +1,4 @@
-pkgdown:
-	R -e "pkgdown::build_site()"
+pkgdown: 
+	rm -rf docs ;\
+	Rscript -e "Sys.setlocale('LC_ALL', 'C'); pkgdown::build_site(document = FALSE)" 
+
